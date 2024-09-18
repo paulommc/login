@@ -95,8 +95,12 @@ class _LoginViewState extends State<LoginView> {
                 ),
                 onPressed: () {
                   if (formkey.currentState!.validate()) {
-                    limparcampos();
-                    Navigator.pushNamed(context, 'main');
+                    if (email.text == 'ana@gmail.com' &&
+                        senha.text == '12345678') {
+                      //ana@gmail.com user padrão, senha 12345678
+                      limparcampos();
+                      Navigator.pushNamed(context, 'main');
+                    }
                   }
                 },
                 child: Padding(
