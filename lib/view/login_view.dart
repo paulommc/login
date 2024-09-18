@@ -15,6 +15,13 @@ class _LoginViewState extends State<LoginView> {
   var email = TextEditingController();
   var senha = TextEditingController();
 
+  @override
+  void initState() {
+    email.text = 'flutter@gmail.com';
+    senha.text = '12345678';
+    super.initState();
+  }
+
   void limparcampos() {
     email.clear();
     senha.clear();
@@ -37,7 +44,6 @@ class _LoginViewState extends State<LoginView> {
                 // Campo de email
                 TextFormField(
                   controller: email,
-                  
                   validator: (value) {
                     String valor = value.toString();
                     if (value == null) {
@@ -98,9 +104,8 @@ class _LoginViewState extends State<LoginView> {
                   ),
                   onPressed: () {
                     if (formkey.currentState!.validate()) {
-                      if (email.text == 'ana@gmail.com' &&
+                      if (email.text == 'flutter@gmail.com' &&
                           senha.text == '12345678') {
-                        //ana@gmail.com user padrão, senha 12345678
                         limparcampos();
                         Navigator.pushNamed(context, 'main');
                       } else {
