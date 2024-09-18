@@ -24,7 +24,7 @@ class _MainViewState extends State<MainView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-         title: Text('Selecione a Categoria'),
+        title: Text('Selecione a Categoria'),
         centerTitle: true,
       ),
       body: Padding(
@@ -34,7 +34,7 @@ class _MainViewState extends State<MainView> {
             crossAxisCount: 2, // 2 por linha
             crossAxisSpacing: 10,
             mainAxisSpacing: 10,
-            childAspectRatio: 3 / 2, 
+            childAspectRatio: 3 / 2,
           ),
           itemCount: lista.length,
           itemBuilder: (context, index) {
@@ -52,7 +52,7 @@ class _MainViewState extends State<MainView> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Image.asset(
-                      lista[index][0]!,
+                      lista[index]['catImagem']!,
                       width: 50,
                       height: 50,
                     ),
