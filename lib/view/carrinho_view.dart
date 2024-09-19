@@ -25,6 +25,20 @@ class _CarrinhoViewState extends State<CarrinhoView> {
         ),
         title: Text('Seu Pedido'),
         centerTitle: true,
+        actions: <Widget>[
+          Padding(
+            padding: const EdgeInsets.only(right: 10),
+            child: IconButton(
+              icon: const Icon(Icons.logout),
+              color: Colors.orange,
+              tooltip: 'Sair',
+              onPressed: () {
+                Navigator.pushNamedAndRemoveUntil(
+                    context, 'login', (Route<dynamic> route) => false);
+              },
+            ),
+          ),
+        ],
       ),
     );
   }

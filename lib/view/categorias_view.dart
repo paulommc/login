@@ -33,17 +33,32 @@ class _CategoriasViewState extends State<CategoriasView> {
             color: Colors.orange,
           ),
         ),
-        title: Text('Selecione a Categoria'),
+        title: Text(
+          'Selecione a Categoria',
+          style: TextStyle(fontSize: 20),
+        ),
         centerTitle: true,
         actions: <Widget>[
           Padding(
-            padding: const EdgeInsets.only(right: 16),
+            padding: const EdgeInsets.only(right: 10),
             child: IconButton(
               icon: const Icon(Icons.shopping_cart),
               color: Colors.orange,
               tooltip: 'Ver seu pedido',
               onPressed: () {
                 Navigator.pushNamed(context, 'carrinho');
+              },
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(right: 10),
+            child: IconButton(
+              icon: const Icon(Icons.logout),
+              color: Colors.orange,
+              tooltip: 'Sair',
+              onPressed: () {
+                Navigator.pushNamedAndRemoveUntil(
+                    context, 'login', (Route<dynamic> route) => false);
               },
             ),
           ),
