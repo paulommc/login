@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 import '../model/categoria.dart';
 
@@ -9,7 +11,7 @@ class CategoriasView extends StatefulWidget {
 }
 
 class _CategoriasViewState extends State<CategoriasView> {
- //atributo
+  //atributo
   var lista = [];
 
   @override
@@ -22,6 +24,15 @@ class _CategoriasViewState extends State<CategoriasView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: InkWell(
+          onTap: () {
+            Navigator.pop(context);
+          },
+          child: Icon(
+            Icons.arrow_back_ios,
+            color: Colors.orange,
+          ),
+        ),
         title: Text('Selecione a Categoria'),
         centerTitle: true,
       ),

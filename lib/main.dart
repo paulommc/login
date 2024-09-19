@@ -4,7 +4,6 @@ import 'package:login/view/cardapio_view.dart';
 import 'package:login/view/categorias_view.dart';
 import 'package:login/view/detalhes_view.dart';
 import 'package:login/view/login_view.dart';
-import 'package:login/view/main_view_old.dart';
 import 'package:login/view/nova_conta_view.dart';
 import 'package:login/view/recupera_senha_view.dart';
 
