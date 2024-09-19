@@ -25,15 +25,24 @@ class _CardapioViewState extends State<CardapioView> {
     categoria = ModalRoute.of(context)!.settings.arguments as String;
     return Scaffold(
       appBar: AppBar(
+        leading: InkWell(
+          onTap: () {
+            Navigator.pop(context);
+          },
+          child: Icon(
+            Icons.arrow_back_ios,
+            color: Colors.orange,
+          ),
+        ),
         title: Text(categoria),
+        centerTitle: true,
       ),
       body: Padding(
         padding: EdgeInsets.all(10),
         child: ListView.builder(
-
           itemCount: lista.where((item) => item.categoria == categoria).length,
           // quantidade de itens que serão exibidos
- 
+
           itemBuilder: (context, index) {
             //nova lista só com is itens da categoria
             var listaFiltrada =
@@ -67,7 +76,8 @@ class _CardapioViewState extends State<CardapioView> {
 
                 onTap: () {
                   //retornar o item da lista selecionado
-                  var dados = lista[index]; //usa a lista original para buscar o produto
+                  var dados =
+                      lista[index]; //usa a lista original para buscar o produto
                   //navegar para a tela DetalhesView
                   Navigator.pushNamed(context, 'detalhes', arguments: dados);
                 },
