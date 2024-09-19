@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:device_preview/device_preview.dart';
+import 'package:login/view/detalhes_view.dart';
 import 'package:login/view/login_view.dart';
 import 'package:login/view/main_view.dart';
 import 'package:login/view/nova_conta_view.dart';
@@ -27,7 +28,8 @@ class MainApp extends StatelessWidget {
         'login': (context) => LoginView(),
         'main': (context) => MainView(),
         'nova_conta': (context) => NovaContaView(),
-        'recupera_senha': (context) => RecuperaSenhaView()
+        'recupera_senha': (context) => RecuperaSenhaView(),
+        'detalhes': (context) => DetalhesView()
       },
     );
   }
