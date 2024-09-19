@@ -1,17 +1,15 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
-
 import 'package:flutter/material.dart';
 import '../model/categoria.dart';
 
-class MainView extends StatefulWidget {
-  const MainView({super.key});
+class CategoriasView extends StatefulWidget {
+  const CategoriasView({super.key});
 
   @override
-  State<MainView> createState() => _MainViewState();
+  State<CategoriasView> createState() => _CategoriasViewState();
 }
 
-class _MainViewState extends State<MainView> {
-//atributo
+class _CategoriasViewState extends State<CategoriasView> {
+ //atributo
   var lista = [];
 
   @override

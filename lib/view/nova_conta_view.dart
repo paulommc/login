@@ -51,7 +51,7 @@ class _NovaContaViewState extends State<NovaContaView> {
                 TextFormField(
                   controller: nome,
                   validator: (value) {
-                    String valor = value.toString();
+                    //String valor = value.toString();
                     if (value == null) {
                       return 'Insira um nome válido';
                     }

@@ -107,7 +107,7 @@ class _LoginViewState extends State<LoginView> {
                       if (email.text == 'flutter@gmail.com' &&
                           senha.text == '12345678') {
                         limparcampos();
-                        Navigator.pushNamed(context, 'main');
+                        Navigator.pushNamed(context, 'categorias');
                       } else {
                         msgKey.currentState!.showSnackBar(
                           SnackBar(
