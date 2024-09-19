@@ -10,19 +10,19 @@ class Categoria {
 
     lista.add(Categoria(
       "Tradicionais",
-      "../lib/images/img1.png",
+      "lib/images/img1.png",
     ));
     lista.add(Categoria(
       "Especiais",
-      "../images/img1.png",
+      "lib/images/img1.png",
     ));
     lista.add(Categoria(
       "Bebidas",
-      "images/img1.png",
+      "lib/images/img1.png",
     ));
     lista.add(Categoria(
       "Sobremesas",
-      "images/img1.png",
+      "lib/images/img1.png",
     ));
     lista.add(Categoria(
       "Entradas",

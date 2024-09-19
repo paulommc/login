@@ -149,7 +149,9 @@ class _NovaContaViewState extends State<NovaContaView> {
                             ),
                           );
                           Timer(Duration(seconds: 4), () {
-                            Navigator.pop(context);
+                            //Navigator.pop(context);
+                            Navigator.pushNamedAndRemoveUntil(context, 'login',
+                                (Route<dynamic> route) => false);
                           });
                         } else {
                           msgKey.currentState!.showSnackBar(

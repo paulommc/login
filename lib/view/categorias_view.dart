@@ -12,7 +12,7 @@ class CategoriasView extends StatefulWidget {
 
 class _CategoriasViewState extends State<CategoriasView> {
   //atributo
-  var lista = [];
+  List<Categoria> lista = [];
 
   @override
   void initState() {
@@ -55,19 +55,19 @@ class _CategoriasViewState extends State<CategoriasView> {
               child: InkWell(
                 onTap: () {
                   // clicar no card
-                  print('Categoria selecionada: ${lista[index]['catNome']}');
+                  //carregar a tela cardapio
                 },
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Image.asset(
-                      lista[index]['catImagem']!,
+                      lista[index].catImagem,
                       width: 50,
                       height: 50,
                     ),
                     SizedBox(height: 10),
                     Text(
-                      lista[index]['catNome']!,
+                      lista[index].catNome,
                       style: TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.bold,
