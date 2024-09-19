@@ -19,6 +19,7 @@ class _DetalhesViewState extends State<DetalhesView> {
         ModalRoute.of(context)!.settings.arguments as Produtos;
 
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       scaffoldMessengerKey: msgKey,
       home: Scaffold(
         appBar: AppBar(
@@ -33,6 +34,19 @@ class _DetalhesViewState extends State<DetalhesView> {
           ),
           title: Text(dados.nome),
           centerTitle: true,
+          actions: <Widget>[
+            Padding(
+              padding: const EdgeInsets.only(right: 16),
+              child: IconButton(
+                icon: const Icon(Icons.shopping_cart),
+                color: Colors.orange,
+                tooltip: 'Ver seu pedido',
+                onPressed: () {
+                  Navigator.pushNamed(context, 'carrinho');
+                },
+              ),
+            ),
+          ],
         ),
         body: Padding(
           padding: EdgeInsets.all(10),

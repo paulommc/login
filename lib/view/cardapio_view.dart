@@ -36,6 +36,19 @@ class _CardapioViewState extends State<CardapioView> {
         ),
         title: Text(categoria),
         centerTitle: true,
+        actions: <Widget>[
+          Padding(
+            padding: const EdgeInsets.only(right: 16),
+            child: IconButton(
+              icon: const Icon(Icons.shopping_cart),
+              color: Colors.orange,
+              tooltip: 'Ver seu pedido',
+              onPressed: () {
+                Navigator.pushNamed(context, 'carrinho');
+              },
+            ),
+          ),
+        ],
       ),
       body: Padding(
         padding: EdgeInsets.all(10),

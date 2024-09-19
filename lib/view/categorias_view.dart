@@ -35,6 +35,19 @@ class _CategoriasViewState extends State<CategoriasView> {
         ),
         title: Text('Selecione a Categoria'),
         centerTitle: true,
+        actions: <Widget>[
+          Padding(
+            padding: const EdgeInsets.only(right: 16),
+            child: IconButton(
+              icon: const Icon(Icons.shopping_cart),
+              color: Colors.orange,
+              tooltip: 'Ver seu pedido',
+              onPressed: () {
+                Navigator.pushNamed(context, 'carrinho');
+              },
+            ),
+          ),
+        ],
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
