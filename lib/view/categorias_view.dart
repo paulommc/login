@@ -54,8 +54,10 @@ class _CategoriasViewState extends State<CategoriasView> {
               ),
               child: InkWell(
                 onTap: () {
-                  // clicar no card
-                  //carregar a tela cardapio
+                  //retornar o item da lista selecionado
+                  var dados = lista[index].catNome;
+                  //navegar para a tela DetalhesView
+                  Navigator.pushNamed(context, 'cardapio', arguments: dados);
                 },
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
