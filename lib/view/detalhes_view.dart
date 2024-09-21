@@ -1,7 +1,9 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:login/model/carrinho.dart';
 import '../model/produtos.dart';
+import '../model/carrinho.dart';
 
 class DetalhesView extends StatefulWidget {
   const DetalhesView({super.key});
@@ -35,30 +37,30 @@ class _DetalhesViewState extends State<DetalhesView> {
           title: Text(dados.nome),
           centerTitle: true,
           actions: <Widget>[
-          Padding(
-            padding: const EdgeInsets.only(right: 10),
-            child: IconButton(
-              icon: const Icon(Icons.shopping_cart),
-              color: Colors.orange,
-              tooltip: 'Ver seu pedido',
-              onPressed: () {
-                Navigator.pushNamed(context, 'carrinho');
-              },
+            Padding(
+              padding: const EdgeInsets.only(right: 10),
+              child: IconButton(
+                icon: const Icon(Icons.shopping_cart),
+                color: Colors.orange,
+                tooltip: 'Ver seu pedido',
+                onPressed: () {
+                  Navigator.pushNamed(context, 'carrinho');
+                },
+              ),
             ),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(right: 10),
-            child: IconButton(
-              icon: const Icon(Icons.logout),
-              color: Colors.orange,
-              tooltip: 'Sair',
-              onPressed: () {
-               Navigator.pushNamedAndRemoveUntil(context, 'login',
-                                (Route<dynamic> route) => false);
-              },
+            Padding(
+              padding: const EdgeInsets.only(right: 10),
+              child: IconButton(
+                icon: const Icon(Icons.logout),
+                color: Colors.orange,
+                tooltip: 'Sair',
+                onPressed: () {
+                  Navigator.pushNamedAndRemoveUntil(
+                      context, 'login', (Route<dynamic> route) => false);
+                },
+              ),
             ),
-          ),
-        ],
+          ],
         ),
         body: Padding(
           padding: EdgeInsets.all(10),
@@ -126,6 +128,11 @@ class _DetalhesViewState extends State<DetalhesView> {
                       duration: Duration(seconds: 3),
                     ),
                   );
+                  Carrinho().itens.add({
+                    'nome': dados.nome,
+                    'valor': dados.valor,
+                    'imagem': dados.imagem,
+                  });
                 },
                 child: Padding(
                   padding: const EdgeInsets.symmetric(
