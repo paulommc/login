@@ -11,6 +11,56 @@ class Produtos {
   static List<Produtos> gerarProdutos() {
     List<Produtos> lista = [];
 
+    //===========================================================
+    //                        Pizzas                            =
+    //===========================================================
+
+    //4 Queijos
+    lista.add(Produtos(
+      "4 Queijos",
+      "Gorgonzola, parmesão, mussarela",
+      40.00,
+      "lib.images/4queijos.png",
+      "Tradicionais"
+    ));
+
+    //Atum
+    lista.add(Produtos(
+      "atum",
+      "Piza de atum",
+      45.00,
+      "lib/images/pizzas/atum.png",
+      "Tradicionais",
+    ));
+
+    //Frango c/ catupiry
+    lista.add(Produtos(
+      "Frango c/ catupiry",
+      "Frango desfiado, requeijão Catupiry",
+      40.00,
+      "lib/images/pizzas/Frango_Catupiry.png",
+      "Tradicionais",
+    ));
+
+    //Havaiana
+    lista.add(Produtos(
+      "Havaiana",
+      "Abacai, presunto",
+      45.00,
+      "login/lib/images/pizzas/havaiana.png",
+      "Tradicionais"
+    ));
+
+    //Marguerita
+    lista.add(Produtos(
+      "Marguerita",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec accumsan laoreet mauris. Nunc maximus nulla at velit pellentesque auctor. Donec non sollicitudin odio. Morbi iaculis vehicula nibh, non lobortis orci tristique in.",
+      68.00,
+      "lib/images/pizzas/marguerita.png",
+      "Tradicionais",
+    ));
+
+    //Mussarela
     lista.add(Produtos(
       "Mussarela",
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec accumsan laoreet mauris. Nunc maximus nulla at velit pellentesque auctor. Donec non sollicitudin odio. Morbi iaculis vehicula nibh, non lobortis orci tristique in.",
@@ -18,13 +68,19 @@ class Produtos {
       "lib/images/img1.png",
       "Tradicionais",
     ));
+
     lista.add(Produtos(
-      "Marguerita",
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec accumsan laoreet mauris. Nunc maximus nulla at velit pellentesque auctor. Donec non sollicitudin odio. Morbi iaculis vehicula nibh, non lobortis orci tristique in.",
-      68.00,
-      "lib/images/img1.png",
-      "Tradicionais",
+      "Prtuguesa",
+      "ervilha, ovo, brocolis",
+      45.00,
+      "lib/images/pizzas/portuguesa.png",
+      "Tradicionais"
     ));
+
+    //===========================================================
+    //                          Especiais                       =
+    //===========================================================
+    
     lista.add(Produtos(
       "Abacaxi",
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec accumsan laoreet mauris. Nunc maximus nulla at velit pellentesque auctor. Donec non sollicitudin odio. Morbi iaculis vehicula nibh, non lobortis orci tristique in.",
@@ -32,6 +88,84 @@ class Produtos {
       "lib/images/img1.png",
       "Especiais",
     ));
+
+    //Nome do produto
+    lista.add(Produtos(
+      "nome", 
+      "desc", 
+      30.00, 
+      "lib/images/", 
+      "Especiais")
+    );
+    
+    //Nome do produto
+    lista.add(Produtos(
+      "nome", 
+      "desc", 
+      30.00, 
+      "lib/images/", 
+      "Especiais")
+    );
+
+    //Nome do produto
+    lista.add(Produtos(
+      "nome", 
+      "desc", 
+      30.00, 
+      "lib/images/", 
+      "Especiais")
+    );
+
+    //Nome do produto
+    lista.add(Produtos(
+      "nome", 
+      "desc", 
+      30.00, 
+      "lib/images/", 
+      "Especiais")
+    );
+
+    //Nome do produto
+    lista.add(Produtos(
+      "nome", 
+      "desc", 
+      30.00, 
+      "lib/images/", 
+      "Especiais")
+    );
+
+    //Nome do produto
+    lista.add(Produtos(
+      "nome", 
+      "desc", 
+      30.00, 
+      "lib/images/", 
+      "Especiais")
+    );
+
+    //Nome do produto
+    lista.add(Produtos(
+      "nome", 
+      "desc", 
+      30.00, 
+      "lib/images/", 
+      "Especiais")
+    );
+
+    //===========================================================
+    //                         Bebidas                          =
+    //===========================================================
+      
+    //Abacaxi c/ hortela
+    lista.add(Produtos(
+      "suco de abacaxi c/ hortelã",
+      "Abacaxi e hortelã",
+      25.00,
+      "lib/images/bebidas/abacaxi_hortela.png",
+      "Bebidas"
+    ));
+
+    //Agua
     lista.add(Produtos(
       "Água",
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec accumsan laoreet mauris. Nunc maximus nulla at velit pellentesque auctor. Donec non sollicitudin odio. Morbi iaculis vehicula nibh, non lobortis orci tristique in.",
@@ -39,6 +173,362 @@ class Produtos {
       "lib/images/img1.png",
       "Bebidas",
     ));
+
+    //Cupuacu
+    lista.add(Produtos(
+      "Suco de cupuaçu",
+      "Cupuaçu",
+      25.00,
+      "lib/images/bebidas/cupuacu.png",
+      "Bebidas"
+
+    ));
+
+    //Graviola
+    lista.add(Produtos(
+      "Suco de graviola",
+      "Graviola",
+      25.00,
+      "lib/images/bebidas/graviola.png",
+      "Bebidas"
+    ));
+
+    //Laranja
+    lista.add(Produtos(
+      "Suco de laranja",
+      "Laranja",
+      25.00,
+      "lib/images/bebidas/laranja.png",
+      "Bebidas"
+    ));
+    
+    //Limao
+    lista.add(Produtos(
+      "Suco de limão",
+      "Limão",
+      25.00,
+      "lib/images/bebidas/lomao.png",
+      "Bebidas"
+    ));
+    
+    //Morango
+    lista.add(Produtos(
+      "Suco de morango",
+      "Morango", 25.00,
+      "lib/images/bebidas/morango.png",
+      "Bebidas"
+    ));
+    
+    //Uva
+    lista.add(Produtos(
+      "Suco de uva",
+      "Uva",
+      25.00,
+      "lib/images/bebidas/uva.png",
+      "Bebidas"
+    ));
+    
+    //===========================================================
+    //                       Sobremessas                        =
+    //===========================================================
+
+    lista.add(Produtos(
+      "Abacaxi",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec accumsan laoreet mauris. Nunc maximus nulla at velit pellentesque auctor. Donec non sollicitudin odio. Morbi iaculis vehicula nibh, non lobortis orci tristique in.",
+      55.00,
+      "lib/images/img1.png",
+      "Sobremesas",
+    ));
+
+    //Nome do produto
+    lista.add(Produtos(
+      "nome", 
+      "desc", 
+      30.00, 
+      "lib/images/", 
+      "Sobremesas")
+    );
+    
+    //Nome do produto
+    lista.add(Produtos(
+      "nome", 
+      "desc", 
+      30.00, 
+      "lib/images/", 
+      "Sobremesas")
+    );
+
+    //Nome do produto
+    lista.add(Produtos(
+      "nome", 
+      "desc", 
+      30.00, 
+      "lib/images/", 
+      "Sobremesas")
+    );
+
+    //Nome do produto
+    lista.add(Produtos(
+      "nome", 
+      "desc", 
+      30.00, 
+      "lib/images/", 
+      "Sobremesas")
+    );
+
+    //Nome do produto
+    lista.add(Produtos(
+      "nome", 
+      "desc", 
+      30.00, 
+      "lib/images/", 
+      "Sobremesas")
+    );
+
+    //Nome do produto
+    lista.add(Produtos(
+      "nome", 
+      "desc", 
+      30.00, 
+      "lib/images/", 
+      "Sobremesas")
+    );
+
+    //Nome do produto
+    lista.add(Produtos(
+      "nome", 
+      "desc", 
+      30.00, 
+      "lib/images/", 
+      "Sobremesas")
+    );
+
+    //===========================================================
+    //                         Massas                           =
+    //===========================================================
+
+    lista.add(Produtos(
+      "Abacaxi",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec accumsan laoreet mauris. Nunc maximus nulla at velit pellentesque auctor. Donec non sollicitudin odio. Morbi iaculis vehicula nibh, non lobortis orci tristique in.",
+      55.00,
+      "lib/images/img1.png",
+      "Massas",
+    ));
+
+    //Nome do produto
+    lista.add(Produtos(
+      "nome", 
+      "desc", 
+      30.00, 
+      "lib/images/", 
+      "Massas")
+    );
+    
+    //Nome do produto
+    lista.add(Produtos(
+      "nome", 
+      "desc", 
+      30.00, 
+      "lib/images/", 
+      "Massas")
+    );
+
+    //Nome do produto
+    lista.add(Produtos(
+      "nome", 
+      "desc", 
+      30.00, 
+      "lib/images/", 
+      "Massas")
+    );
+
+    //Nome do produto
+    lista.add(Produtos(
+      "nome", 
+      "desc", 
+      30.00, 
+      "lib/images/", 
+      "Massas")
+    );
+
+    //Nome do produto
+    lista.add(Produtos(
+      "nome", 
+      "desc", 
+      30.00, 
+      "lib/images/", 
+      "Massas")
+    );
+
+    //Nome do produto
+    lista.add(Produtos(
+      "nome", 
+      "desc", 
+      30.00, 
+      "lib/images/", 
+      "Massas")
+    );
+
+    //Nome do produto
+    lista.add(Produtos(
+      "nome", 
+      "desc", 
+      30.00, 
+      "lib/images/", 
+      "Massas")
+    );
+
+    //===========================================================
+    //                         Saladas                          =
+    //===========================================================
+
+    lista.add(Produtos(
+      "Abacaxi",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec accumsan laoreet mauris. Nunc maximus nulla at velit pellentesque auctor. Donec non sollicitudin odio. Morbi iaculis vehicula nibh, non lobortis orci tristique in.",
+      55.00,
+      "lib/images/img1.png",
+      "Saladas",
+    ));
+
+    //Nome do produto
+    lista.add(Produtos(
+      "nome", 
+      "desc", 
+      30.00, 
+      "lib/images/", 
+      "Saladas")
+    );
+    
+    //Nome do produto
+    lista.add(Produtos(
+      "nome", 
+      "desc", 
+      30.00, 
+      "lib/images/", 
+      "Saladas")
+    );
+
+    //Nome do produto
+    lista.add(Produtos(
+      "nome", 
+      "desc", 
+      30.00, 
+      "lib/images/", 
+      "Saladas")
+    );
+
+    //Nome do produto
+    lista.add(Produtos(
+      "nome", 
+      "desc", 
+      30.00, 
+      "lib/images/", 
+      "Saladas")
+    );
+
+    //Nome do produto
+    lista.add(Produtos(
+      "nome", 
+      "desc", 
+      30.00, 
+      "lib/images/", 
+      "Saladas")
+    );
+
+    //Nome do produto
+    lista.add(Produtos(
+      "nome", 
+      "desc", 
+      30.00, 
+      "lib/images/", 
+      "Saladas")
+    );
+
+    //Nome do produto
+    lista.add(Produtos(
+      "nome", 
+      "desc", 
+      30.00, 
+      "lib/images/", 
+      "Saladas")
+    );
+
+    //===========================================================
+    //                         Promocoes                        =
+    //===========================================================
+
+    lista.add(Produtos(
+      "Abacaxi",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec accumsan laoreet mauris. Nunc maximus nulla at velit pellentesque auctor. Donec non sollicitudin odio. Morbi iaculis vehicula nibh, non lobortis orci tristique in.",
+      55.00,
+      "lib/images/img1.png",
+      "Promoções",
+    ));
+
+    //Nome do produto
+    lista.add(Produtos(
+      "nome", 
+      "desc", 
+      30.00, 
+      "lib/images/", 
+      "Promoções")
+    );
+    
+    //Nome do produto
+    lista.add(Produtos(
+      "nome", 
+      "desc", 
+      30.00, 
+      "lib/images/", 
+      "Promoções")
+    );
+
+    //Nome do produto
+    lista.add(Produtos(
+      "nome", 
+      "desc", 
+      30.00, 
+      "lib/images/", 
+      "Promoções")
+    );
+
+    //Nome do produto
+    lista.add(Produtos(
+      "nome", 
+      "desc", 
+      30.00, 
+      "lib/images/", 
+      "Promoções")
+    );
+
+    //Nome do produto
+    lista.add(Produtos(
+      "nome", 
+      "desc", 
+      30.00, 
+      "lib/images/", 
+      "Promoções")
+    );
+
+    //Nome do produto
+    lista.add(Produtos(
+      "nome", 
+      "desc", 
+      30.00, 
+      "lib/images/", 
+      "Promoções")
+    );
+
+    //Nome do produto
+    lista.add(Produtos(
+      "nome", 
+      "desc", 
+      30.00, 
+      "lib/images/", 
+      "Promoções")
+    );
+
+    //===========================================================
     return lista;
   }
 }

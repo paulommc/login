@@ -80,6 +80,7 @@ class _CategoriasViewState extends State<CategoriasView> {
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(10),
               ),
+
               child: InkWell(
                 onTap: () {
                   //retornar o item da lista selecionado
@@ -87,6 +88,7 @@ class _CategoriasViewState extends State<CategoriasView> {
                   //navegar para a tela DetalhesView
                   Navigator.pushNamed(context, 'cardapio', arguments: dados);
                 },
+                
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [

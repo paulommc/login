@@ -62,6 +62,7 @@ class _CardapioViewState extends State<CardapioView> {
           ),
         ],
       ),
+      
       body: Padding(
         padding: EdgeInsets.all(10),
         child: ListView.builder(
@@ -78,6 +79,7 @@ class _CardapioViewState extends State<CardapioView> {
                   listaFiltrada[index].nome,
                   style: TextStyle(fontSize: 24),
                 ),
+
                 subtitle: Text(
                   "R\$ ${listaFiltrada[index].valor.toStringAsFixed(2)}",
                   style: TextStyle(
@@ -85,6 +87,7 @@ class _CardapioViewState extends State<CardapioView> {
                     fontStyle: FontStyle.italic,
                   ),
                 ),
+
                 //leading: Icon(Icons.contact_page_outlined), // lado esquerdo
                 //leading: Image.network(lista[index].foto),
                 leading: Container(
@@ -96,13 +99,14 @@ class _CardapioViewState extends State<CardapioView> {
                     height: 50,
                   ),
                 ),
+
                 trailing: Icon(Icons.arrow_right), // lado direito
                 hoverColor: Colors.red.shade100,
 
                 onTap: () {
                   //retornar o item da lista selecionado
                   var dados =
-                      lista[index]; //usa a lista original para buscar o produto
+                    lista[index]; //usa a lista original para buscar o produto
                   //navegar para a tela DetalhesView
                   Navigator.pushNamed(context, 'detalhes', arguments: dados);
                 },
