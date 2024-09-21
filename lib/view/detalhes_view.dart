@@ -3,7 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:login/model/carrinho.dart';
 import '../model/produtos.dart';
-import '../model/carrinho.dart';
+//import '../model/carrinho.dart';
 
 class DetalhesView extends StatefulWidget {
   const DetalhesView({super.key});
