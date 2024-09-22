@@ -79,7 +79,17 @@ class _CarrinhoViewState extends State<CarrinhoView> {
                             height: 50,
                           ),
                         ),
-                        trailing: Icon(Icons.arrow_right),
+                        trailing: InkWell(
+                          onTap: () {
+                            setState(() {
+                              itens.removeAt(index);
+                            });
+                          },
+                          child: Icon(
+                            Icons.cancel_outlined,
+                            color: Colors.red.shade900,
+                          ),
+                        ),
                       ),
                     );
                   },
