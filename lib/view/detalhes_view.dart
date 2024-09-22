@@ -100,7 +100,7 @@ class _DetalhesViewState extends State<DetalhesView> {
                   style: TextStyle(fontSize: 12),
                 ),
                 subtitle: Text(
-                  "R\$ ${dados.valor.toStringAsFixed(2)}",
+                  "R\$ ${dados.valor.toStringAsFixed(2).replaceAll('.', ',')}",
                   style: TextStyle(fontSize: 24),
                   textAlign: TextAlign.right,
                 ),

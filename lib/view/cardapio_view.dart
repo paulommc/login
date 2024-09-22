@@ -80,7 +80,7 @@ class _CardapioViewState extends State<CardapioView> {
                 ),
 
                 subtitle: Text(
-                  "R\$ ${listaFiltrada[index].valor.toStringAsFixed(2)}",
+                  "R\$ ${listaFiltrada[index].valor.toStringAsFixed(2).replaceAll('.', ',')}",
                   style: TextStyle(
                     fontSize: 16,
                     fontStyle: FontStyle.italic,
@@ -104,8 +104,7 @@ class _CardapioViewState extends State<CardapioView> {
 
                 onTap: () {
                   //retornar o item da lista selecionado
-                  var dados = listaFiltrada[
-                      index];
+                  var dados = listaFiltrada[index];
                   //navegar para a tela DetalhesView
                   Navigator.pushNamed(context, 'detalhes', arguments: dados);
                 },
