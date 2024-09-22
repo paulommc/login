@@ -11,49 +11,49 @@ class Categoria {
     //Tradicionais
     lista.add(Categoria(
       "Tradicionais",
-      "lib/images/img1.png",
+      "lib/images/categorias/tradicionais.png",
     ));
 
     //Especiais
     lista.add(Categoria(
       "Especiais",
-      "lib/images/img1.png",
+      "lib/images/categorias/especiais.png",
     ));
 
     //Bebidas
     lista.add(Categoria(
       "Bebidas",
-      "lib/images/img1.png",
+      "lib/images/categorias/bebidas.png",
     ));
 
     //Sobremesas
     lista.add(Categoria(
       "Sobremesas",
-      "lib/images/img1.png",
+      "lib/images/categorias/sobremesas.png",
     ));
 
     //Entradas
     lista.add(Categoria(
       "Entradas",
-      "lib/images/img1.png",
+      "lib/images/categorias/entradas.png",
     ));
 
     //Massas
     lista.add(Categoria(
       "Massas",
-      "lib/images/img1.png",
+      "lib/images/categorias/massas.png",
     ));
 
     //Saladas
     lista.add(Categoria(
       "Saladas",
-      "lib/images/img1.png",
+      "lib/images/categorias/saladas.png",
     ));
 
     //Promoceos
     lista.add(Categoria(
       "Promoções",
-      "lib/images/img1.png",
+      "lib/images/categorias/promocoes.png",
     ));
     return lista;
   }

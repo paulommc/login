@@ -55,14 +55,13 @@ class _CardapioViewState extends State<CardapioView> {
               color: Colors.orange,
               tooltip: 'Sair',
               onPressed: () {
-               Navigator.pushNamedAndRemoveUntil(context, 'login',
-                                (Route<dynamic> route) => false);
+                Navigator.pushNamedAndRemoveUntil(
+                    context, 'login', (Route<dynamic> route) => false);
               },
             ),
           ),
         ],
       ),
-      
       body: Padding(
         padding: EdgeInsets.all(10),
         child: ListView.builder(
@@ -105,8 +104,8 @@ class _CardapioViewState extends State<CardapioView> {
 
                 onTap: () {
                   //retornar o item da lista selecionado
-                  var dados =
-                    lista[index]; //usa a lista original para buscar o produto
+                  var dados = listaFiltrada[
+                      index];
                   //navegar para a tela DetalhesView
                   Navigator.pushNamed(context, 'detalhes', arguments: dados);
                 },
