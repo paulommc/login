@@ -20,7 +20,7 @@ class Produtos {
       "4 Queijos",
       "Gorgonzola, parmesão, mussarela",
       40.00,
-      "lib.images/4queijos.png",
+      "lib/images/4queijos.png",
       "Tradicionais"
     ));
 
@@ -89,66 +89,57 @@ class Produtos {
       "Especiais",
     ));
 
-    //Nome do produto
+    //Caranguejo c/ amendoim
     lista.add(Produtos(
-      "nome", 
-      "desc", 
+      "Caranguejo c/ amendoim", 
+      "Caranguejo assado com pedaços de amendoim torrado e salsinha", 
       30.00, 
-      "lib/images/", 
+      "lib/images/especiais/caranguejo_amendoim.png", 
       "Especiais")
     );
     
-    //Nome do produto
+    //Carbonara
     lista.add(Produtos(
-      "nome", 
-      "desc", 
+      "Carbonara", 
+      "Macarrão com bacon e gema", 
       30.00, 
-      "lib/images/", 
+      "lib/images/especiais/carbonara.png", 
+      "Especiais")
+    );
+
+    //Lagosta assada
+    lista.add(Produtos(
+      "Lagosta", 
+      "Lagosta assada, cebolinha, salsinha e manteiga", 
+      30.00, 
+      "lib/images/especiais/lagosta.png", 
+      "Especiais")
+    );
+
+    //Picanha
+    lista.add(Produtos(
+      "Picanha grelhada", 
+      "Picanha grelhada, limão, ", 
+      70.00, 
+      "lib/images/especiais/picanha.png", 
+      "Especiais")
+    );
+
+    //risoto_camarao
+    lista.add(Produtos(
+      "Risoto de camarão", 
+      "Arroz, camarão, cebolinha, creme de leite, leite, salsinha", 
+      30.00, 
+      "lib/images/especiais", 
       "Especiais")
     );
 
     //Nome do produto
     lista.add(Produtos(
-      "nome", 
-      "desc", 
+      "Salmão grelhado", 
+      "Filé de salmão grelhado, pimenta, oregano", 
       30.00, 
-      "lib/images/", 
-      "Especiais")
-    );
-
-    //Nome do produto
-    lista.add(Produtos(
-      "nome", 
-      "desc", 
-      30.00, 
-      "lib/images/", 
-      "Especiais")
-    );
-
-    //Nome do produto
-    lista.add(Produtos(
-      "nome", 
-      "desc", 
-      30.00, 
-      "lib/images/", 
-      "Especiais")
-    );
-
-    //Nome do produto
-    lista.add(Produtos(
-      "nome", 
-      "desc", 
-      30.00, 
-      "lib/images/", 
-      "Especiais")
-    );
-
-    //Nome do produto
-    lista.add(Produtos(
-      "nome", 
-      "desc", 
-      30.00, 
-      "lib/images/", 
+      "lib/images/especiais/salmao_grelhado.png", 
       "Especiais")
     );
 
@@ -232,74 +223,57 @@ class Produtos {
     //                       Sobremessas                        =
     //===========================================================
 
+    //Banana Split
     lista.add(Produtos(
-      "Abacaxi",
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec accumsan laoreet mauris. Nunc maximus nulla at velit pellentesque auctor. Donec non sollicitudin odio. Morbi iaculis vehicula nibh, non lobortis orci tristique in.",
-      55.00,
-      "lib/images/img1.png",
-      "Sobremesas",
-    ));
-
-    //Nome do produto
-    lista.add(Produtos(
-      "nome", 
-      "desc", 
+      "Banana Split", 
+      "Duas bananas acompanhadas de 3 bolas", 
       30.00, 
-      "lib/images/", 
+      "lib/images/sobremesas/banana_split.png", 
+      "Sobremesas")
+    );
+
+    //churros de chocolate
+    lista.add(Produtos(
+      "Churros de chocolate", 
+      "Churros de chocolate", 
+      30.00, 
+      "lib/images/sobremesas", 
       "Sobremesas")
     );
     
-    //Nome do produto
+    //Churros de doce de leite
     lista.add(Produtos(
-      "nome", 
-      "desc", 
+      "Churros de doce de leite", 
+      "Churros de doce de leite", 
       30.00, 
-      "lib/images/", 
+      "lib/images/sobremesas", 
       "Sobremesas")
     );
 
-    //Nome do produto
+    //Petit Gateau
     lista.add(Produtos(
-      "nome", 
-      "desc", 
+      "Petit Gateau", 
+      "Um bolo de chocolate recheado de chocolate, acompanhado com sorvete", 
       30.00, 
-      "lib/images/", 
+      "lib/images/sobremesas", 
       "Sobremesas")
     );
 
-    //Nome do produto
+    //sorvete de baunilha
     lista.add(Produtos(
-      "nome", 
-      "desc", 
+      "Sorvete de baunilha", 
+      "Sorvete de baunilha", 
       30.00, 
-      "lib/images/", 
+      "lib/images/sobremesas/sorvete_baunilha.png", 
       "Sobremesas")
     );
 
-    //Nome do produto
+    //sorvete de chocolate
     lista.add(Produtos(
-      "nome", 
-      "desc", 
+      "Sorvete de chocolate", 
+      "Sorvete de chocolate", 
       30.00, 
-      "lib/images/", 
-      "Sobremesas")
-    );
-
-    //Nome do produto
-    lista.add(Produtos(
-      "nome", 
-      "desc", 
-      30.00, 
-      "lib/images/", 
-      "Sobremesas")
-    );
-
-    //Nome do produto
-    lista.add(Produtos(
-      "nome", 
-      "desc", 
-      30.00, 
-      "lib/images/", 
+      "lib/images/sobremesas/sorvete_chocolate.png", 
       "Sobremesas")
     );
 
@@ -315,66 +289,66 @@ class Produtos {
       "Massas",
     ));
 
-    //Nome do produto
+    //Lasanha vegetariana
     lista.add(Produtos(
-      "nome", 
-      "desc", 
+      "Lasanja vegetariana", 
+      "Berinjela, queijo, molho de tomate, salsinha", 
       30.00, 
-      "lib/images/", 
+      "lib/images/lasanha_berinjela.png", 
       "Massas")
     );
     
-    //Nome do produto
+    //Lasanha
     lista.add(Produtos(
-      "nome", 
-      "desc", 
+      "Lasanha", 
+      "Presunto, carne moída, queijo, molho de tomate, cebolinha, salsinha", 
       30.00, 
-      "lib/images/", 
+      "lib/images/massas/lasanha.png", 
       "Massas")
     );
 
-    //Nome do produto
+    //Macarrão alho-e-óleo
     lista.add(Produtos(
-      "nome", 
-      "desc", 
+      "Macarrão alho e óleo", 
+      "Macarrão, alho, azeite, manjericão, oregano", 
       30.00, 
-      "lib/images/", 
+      "lib/images/massas/macarrao_alho_oleo.png", 
       "Massas")
     );
 
-    //Nome do produto
+    //Massa fresaca
     lista.add(Produtos(
-      "nome", 
-      "desc", 
+      "Massa fresca", 
+      "Macarrão, molho de tomate ou branco", 
       30.00, 
-      "lib/images/", 
+      "lib/images/massas/massa_fresca.png", 
       "Massas")
     );
 
-    //Nome do produto
+    //Nhoque
     lista.add(Produtos(
-      "nome", 
-      "desc", 
+      "Nhoque", 
+      "Nhoque, manjericão, molho de tomate ou branco", 
       30.00, 
-      "lib/images/", 
+      "lib/images/massas/nhoque.png", 
       "Massas")
     );
 
-    //Nome do produto
+    //Pastel de salmao
     lista.add(Produtos(
-      "nome", 
-      "desc", 
+      "Pastel de salmão com creamcheese", 
+      "Pastel, salmão, creamcheese", 
       30.00, 
-      "lib/images/", 
+      "lib/images/massas/pastel_salmao.png", 
       "Massas")
     );
 
-    //Nome do produto
+    //torta_frango
     lista.add(Produtos(
-      "nome", 
-      "desc", 
+      "Torta de frango", 
+      "Frango, ervilha, requeijão", 
       30.00, 
-      "lib/images/", 
+      "lib/images/massas/torta_frango", 
       "Massas")
     );
 
@@ -390,66 +364,30 @@ class Produtos {
       "Saladas",
     ));
 
-    //Nome do produto
+    //Salada Caesar
     lista.add(Produtos(
-      "nome", 
-      "desc", 
+      "Salada Caesar", 
+      "Salada Caesar, torradinhas e queijo parmesão", 
       30.00, 
-      "lib/images/", 
+      "lib/images/saladas/salada_caesar.png", 
       "Saladas")
     );
     
-    //Nome do produto
+    //Salada de fruta
     lista.add(Produtos(
-      "nome", 
-      "desc", 
+      "Salada de fruta", 
+      "Maçã, manga, kiwi, limão, pera, morango, ", 
       30.00, 
-      "lib/images/", 
+      "lib/images/saladas/salada_de_fruta.png", 
       "Saladas")
     );
 
     //Nome do produto
     lista.add(Produtos(
-      "nome", 
-      "desc", 
+      "Salada simples", 
+      "Alface, tomate, cenoura, cebola roxa, ", 
       30.00, 
-      "lib/images/", 
-      "Saladas")
-    );
-
-    //Nome do produto
-    lista.add(Produtos(
-      "nome", 
-      "desc", 
-      30.00, 
-      "lib/images/", 
-      "Saladas")
-    );
-
-    //Nome do produto
-    lista.add(Produtos(
-      "nome", 
-      "desc", 
-      30.00, 
-      "lib/images/", 
-      "Saladas")
-    );
-
-    //Nome do produto
-    lista.add(Produtos(
-      "nome", 
-      "desc", 
-      30.00, 
-      "lib/images/", 
-      "Saladas")
-    );
-
-    //Nome do produto
-    lista.add(Produtos(
-      "nome", 
-      "desc", 
-      30.00, 
-      "lib/images/", 
+      "lib/images/saladas/salada_simples/", 
       "Saladas")
     );
 

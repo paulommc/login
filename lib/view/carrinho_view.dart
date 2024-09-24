@@ -42,13 +42,14 @@ class _CarrinhoViewState extends State<CarrinhoView> {
           ),
         ],
       ),
+      
       body: Padding(
         padding: EdgeInsets.all(10),
         child: ListView.builder(
           itemCount: itens.length,
           // quantidade de itens que serão exibidos
           itemBuilder: (context, index) {
-            //nova lista só com is itens da categoria
+            //nova lista só com os itens da categoria
             return Card(
               child: ListTile(
                 title: Text(
