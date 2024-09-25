@@ -31,51 +31,6 @@ class _CarrinhoViewState extends State<CarrinhoView> {
               color: Colors.orange,
             ),
           ),
-<<<<<<< HEAD
-        ],
-      ),
-      
-      body: Padding(
-        padding: EdgeInsets.all(10),
-        child: ListView.builder(
-          itemCount: itens.length,
-          // quantidade de itens que serão exibidos
-          itemBuilder: (context, index) {
-            //nova lista só com os itens da categoria
-            return Card(
-              child: ListTile(
-                title: Text(
-                  itens[index]['nome'],
-                  style: TextStyle(fontSize: 24),
-                ),
-                subtitle: Text(
-                  "R\$ ${itens[index]['valor'].toStringAsFixed(2)}",
-                  style: TextStyle(
-                    fontSize: 16,
-                    fontStyle: FontStyle.italic,
-                  ),
-                ),
-                //leading: Icon(Icons.contact_page_outlined), // lado esquerdo
-                //leading: Image.network(lista[index].foto),
-                leading: Container(
-                  width: 50,
-                  height: 50,
-                  child: Image.asset(
-                    itens[index]['imagem'],
-                    width: 50,
-                    height: 50,
-                  ),
-                ),
-                trailing: Icon(Icons.arrow_right), // lado direito
-                hoverColor: Colors.red.shade100,
-
-                onTap: () {
-                  //retornar o item da lista selecionado
-                  // var dados =
-                  //     lista[index]; //usa a lista original para buscar o produto
-                  // //navegar para a tela DetalhesView
-                  // Navigator.pushNamed(context, 'detalhes', arguments: dados);
-=======
           title: Text('Seu Pedido'),
           centerTitle: true,
           actions: <Widget>[
@@ -88,7 +43,6 @@ class _CarrinhoViewState extends State<CarrinhoView> {
                 onPressed: () {
                   Navigator.pushNamedAndRemoveUntil(
                       context, 'login', (Route<dynamic> route) => false);
->>>>>>> 1dfa5c79d3b7bda7ca9eea517d77426412d0c88c
                 },
               ),
             ),
@@ -133,6 +87,7 @@ class _CarrinhoViewState extends State<CarrinhoView> {
                           },
                           child: Icon(
                             Icons.cancel_outlined,
+                            size: 30,
                             color: Colors.red.shade900,
                           ),
                         ),
