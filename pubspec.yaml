@@ -19,4 +19,33 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   assets:
+  # categorias
+    - lib/images/categorias/bebidas.png 
+    - lib/images/categorias/entradas.png
+    - lib/images/categorias/especiais.png 
+    - lib/images/categorias/massas.png
+    - lib/images/categorias/promocoes.png 
+    - lib/images/categorias/saladas.png 
+    - lib/images/categorias/sobremesas.png 
+    - lib/images/categorias/tradicionais.png 
+  #pizzas
+    - lib/images/pizzas/atum.png
+    - lib/images/pizzas/4queijos.png
+    - lib/images/pizzas/banana_canela.png
+    - lib/images/pizzas/chocolate.png
+    - lib/images/pizzas/Frango_Catupiry.png
+    - lib/images/pizzas/havaiana.png
+    - lib/images/pizzas/marguerita.png
+    - lib/images/pizzas/mussarela.png
+    - lib/images/pizzas/portuguesa.png
+  #bebidas
+    - lib/images/bebidas/abacaxi_hortela.png
+    - lib/images/bebidas/agua.png
+    - lib/images/bebidas/cupuacu.png
+    - lib/images/bebidas/graviola.png
+    - lib/images/bebidas/laranja.png
+    - lib/images/bebidas/limao.png
+    - lib/images/bebidas/morango.png
+    - lib/images/bebidas/uva.png
+  #outros
     - lib/images/img1.png

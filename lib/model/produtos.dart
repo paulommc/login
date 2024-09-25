@@ -16,6 +16,7 @@ class Produtos {
     //===========================================================
 
     //4 Queijos
+<<<<<<< HEAD
     lista.add(Produtos(
       "4 Queijos",
       "Gorgonzola, parmesão, mussarela",
@@ -23,10 +24,14 @@ class Produtos {
       "lib/images/4queijos.png",
       "Tradicionais"
     ));
+=======
+    lista.add(Produtos("4 Queijos", "Gorgonzola, parmesão, mussarela", 40.00,
+        "lib/images/pizzas/4queijos.png", "Tradicionais"));
+>>>>>>> 1dfa5c79d3b7bda7ca9eea517d77426412d0c88c
 
     //Atum
     lista.add(Produtos(
-      "atum",
+      "Atum",
       "Piza de atum",
       45.00,
       "lib/images/pizzas/atum.png",
@@ -43,13 +48,8 @@ class Produtos {
     ));
 
     //Havaiana
-    lista.add(Produtos(
-      "Havaiana",
-      "Abacai, presunto",
-      45.00,
-      "login/lib/images/pizzas/havaiana.png",
-      "Tradicionais"
-    ));
+    lista.add(Produtos("Havaiana", "Abacai, presunto", 45.00,
+        "lib/images/pizzas/havaiana.png", "Tradicionais"));
 
     //Marguerita
     lista.add(Produtos(
@@ -65,22 +65,17 @@ class Produtos {
       "Mussarela",
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec accumsan laoreet mauris. Nunc maximus nulla at velit pellentesque auctor. Donec non sollicitudin odio. Morbi iaculis vehicula nibh, non lobortis orci tristique in.",
       55.00,
-      "lib/images/img1.png",
+      "lib/images/pizzas/mussarela.png",
       "Tradicionais",
     ));
 
-    lista.add(Produtos(
-      "Prtuguesa",
-      "ervilha, ovo, brocolis",
-      45.00,
-      "lib/images/pizzas/portuguesa.png",
-      "Tradicionais"
-    ));
+    lista.add(Produtos("Portuguesa", "ervilha, ovo, brocolis", 45.00,
+        "lib/images/pizzas/portuguesa.png", "Tradicionais"));
 
     //===========================================================
     //                          Especiais                       =
     //===========================================================
-    
+
     lista.add(Produtos(
       "Abacaxi",
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec accumsan laoreet mauris. Nunc maximus nulla at velit pellentesque auctor. Donec non sollicitudin odio. Morbi iaculis vehicula nibh, non lobortis orci tristique in.",
@@ -89,6 +84,7 @@ class Produtos {
       "Especiais",
     ));
 
+<<<<<<< HEAD
     //Caranguejo c/ amendoim
     lista.add(Produtos(
       "Caranguejo c/ amendoim", 
@@ -142,19 +138,36 @@ class Produtos {
       "lib/images/especiais/salmao_grelhado.png", 
       "Especiais")
     );
+=======
+    //Nome do produto
+    lista.add(Produtos("nome", "desc", 30.00, "lib/images/", "Especiais"));
+
+    //Nome do produto
+    lista.add(Produtos("nome", "desc", 30.00, "lib/images/", "Especiais"));
+
+    //Nome do produto
+    lista.add(Produtos("nome", "desc", 30.00, "lib/images/", "Especiais"));
+
+    //Nome do produto
+    lista.add(Produtos("nome", "desc", 30.00, "lib/images/", "Especiais"));
+
+    //Nome do produto
+    lista.add(Produtos("nome", "desc", 30.00, "lib/images/", "Especiais"));
+
+    //Nome do produto
+    lista.add(Produtos("nome", "desc", 30.00, "lib/images/", "Especiais"));
+
+    //Nome do produto
+    lista.add(Produtos("nome", "desc", 30.00, "lib/images/", "Especiais"));
+>>>>>>> 1dfa5c79d3b7bda7ca9eea517d77426412d0c88c
 
     //===========================================================
     //                         Bebidas                          =
     //===========================================================
-      
+
     //Abacaxi c/ hortela
-    lista.add(Produtos(
-      "suco de abacaxi c/ hortelã",
-      "Abacaxi e hortelã",
-      25.00,
-      "lib/images/bebidas/abacaxi_hortela.png",
-      "Bebidas"
-    ));
+    lista.add(Produtos("suco de abacaxi c/ hortelã", "Abacaxi e hortelã", 25.00,
+        "lib/images/bebidas/abacaxi_hortela.png", "Bebidas"));
 
     //Agua
     lista.add(Produtos(
@@ -166,65 +179,36 @@ class Produtos {
     ));
 
     //Cupuacu
-    lista.add(Produtos(
-      "Suco de cupuaçu",
-      "Cupuaçu",
-      25.00,
-      "lib/images/bebidas/cupuacu.png",
-      "Bebidas"
-
-    ));
+    lista.add(Produtos("Suco de cupuaçu", "Cupuaçu", 25.00,
+        "lib/images/bebidas/cupuacu.png", "Bebidas"));
 
     //Graviola
-    lista.add(Produtos(
-      "Suco de graviola",
-      "Graviola",
-      25.00,
-      "lib/images/bebidas/graviola.png",
-      "Bebidas"
-    ));
+    lista.add(Produtos("Suco de graviola", "Graviola", 25.00,
+        "lib/images/bebidas/graviola.png", "Bebidas"));
 
     //Laranja
-    lista.add(Produtos(
-      "Suco de laranja",
-      "Laranja",
-      25.00,
-      "lib/images/bebidas/laranja.png",
-      "Bebidas"
-    ));
-    
+    lista.add(Produtos("Suco de laranja", "Laranja", 25.00,
+        "lib/images/bebidas/laranja.png", "Bebidas"));
+
     //Limao
-    lista.add(Produtos(
-      "Suco de limão",
-      "Limão",
-      25.00,
-      "lib/images/bebidas/lomao.png",
-      "Bebidas"
-    ));
-    
+    lista.add(Produtos("Suco de limão", "Limão", 25.00,
+        "lib/images/bebidas/limao.png", "Bebidas"));
+
     //Morango
-    lista.add(Produtos(
-      "Suco de morango",
-      "Morango", 25.00,
-      "lib/images/bebidas/morango.png",
-      "Bebidas"
-    ));
-    
+    lista.add(Produtos("Suco de morango", "Morango", 25.00,
+        "lib/images/bebidas/morango.png", "Bebidas"));
+
     //Uva
     lista.add(Produtos(
-      "Suco de uva",
-      "Uva",
-      25.00,
-      "lib/images/bebidas/uva.png",
-      "Bebidas"
-    ));
-    
+        "Suco de uva", "Uva", 25.00, "lib/images/bebidas/uva.png", "Bebidas"));
+
     //===========================================================
     //                       Sobremessas                        =
     //===========================================================
 
     //Banana Split
     lista.add(Produtos(
+<<<<<<< HEAD
       "Banana Split", 
       "Duas bananas acompanhadas de 3 bolas", 
       30.00, 
@@ -276,19 +260,82 @@ class Produtos {
       "lib/images/sobremesas/sorvete_chocolate.png", 
       "Sobremesas")
     );
+=======
+      "Pudim",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec accumsan laoreet mauris. Nunc maximus nulla at velit pellentesque auctor. Donec non sollicitudin odio. Morbi iaculis vehicula nibh, non lobortis orci tristique in.",
+      15.00,
+      "lib/images/img1.png",
+      "Sobremesas",
+    ));
+
+    //Nome do produto
+    lista.add(Produtos("nome", "desc", 30.00, "lib/images/", "Sobremesas"));
+
+    //Nome do produto
+    lista.add(Produtos("nome", "desc", 30.00, "lib/images/", "Sobremesas"));
+
+    //Nome do produto
+    lista.add(Produtos("nome", "desc", 30.00, "lib/images/", "Sobremesas"));
+
+    //Nome do produto
+    lista.add(Produtos("nome", "desc", 30.00, "lib/images/", "Sobremesas"));
+
+    //Nome do produto
+    lista.add(Produtos("nome", "desc", 30.00, "lib/images/", "Sobremesas"));
+
+    //Nome do produto
+    lista.add(Produtos("nome", "desc", 30.00, "lib/images/", "Sobremesas"));
+
+    //Nome do produto
+    lista.add(Produtos("nome", "desc", 30.00, "lib/images/", "Sobremesas"));
+
+    //===========================================================
+    //                         Entradas                           =
+    //===========================================================
+
+    lista.add(Produtos(
+      "Batata Frita",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec accumsan laoreet mauris. Nunc maximus nulla at velit pellentesque auctor. Donec non sollicitudin odio. Morbi iaculis vehicula nibh, non lobortis orci tristique in.",
+      30.00,
+      "lib/images/img1.png",
+      "Entradas",
+    ));
+
+    //Nome do produto
+    lista.add(Produtos("nome", "desc", 30.00, "lib/images/", "Entradas"));
+
+    //Nome do produto
+    lista.add(Produtos("nome", "desc", 30.00, "lib/images/", "Entradas"));
+
+    //Nome do produto
+    lista.add(Produtos("nome", "desc", 30.00, "lib/images/", "Entradas"));
+
+    //Nome do produto
+    lista.add(Produtos("nome", "desc", 30.00, "lib/images/", "Entradas"));
+
+    //Nome do produto
+    lista.add(Produtos("nome", "desc", 30.00, "lib/images/", "Entradas"));
+
+    //Nome do produto
+    lista.add(Produtos("nome", "desc", 30.00, "lib/images/", "Entradas"));
+
+    //Nome do produto
+    lista.add(Produtos("nome", "desc", 30.00, "lib/images/", "Entradas"));
+>>>>>>> 1dfa5c79d3b7bda7ca9eea517d77426412d0c88c
 
     //===========================================================
     //                         Massas                           =
     //===========================================================
 
     lista.add(Produtos(
-      "Abacaxi",
+      "Espaguete",
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec accumsan laoreet mauris. Nunc maximus nulla at velit pellentesque auctor. Donec non sollicitudin odio. Morbi iaculis vehicula nibh, non lobortis orci tristique in.",
-      55.00,
+      45.00,
       "lib/images/img1.png",
       "Massas",
     ));
 
+<<<<<<< HEAD
     //Lasanha vegetariana
     lista.add(Produtos(
       "Lasanja vegetariana", 
@@ -351,19 +398,42 @@ class Produtos {
       "lib/images/massas/torta_frango", 
       "Massas")
     );
+=======
+    //Nome do produto
+    lista.add(Produtos("nome", "desc", 30.00, "lib/images/", "Massas"));
+
+    //Nome do produto
+    lista.add(Produtos("nome", "desc", 30.00, "lib/images/", "Massas"));
+
+    //Nome do produto
+    lista.add(Produtos("nome", "desc", 30.00, "lib/images/", "Massas"));
+
+    //Nome do produto
+    lista.add(Produtos("nome", "desc", 30.00, "lib/images/", "Massas"));
+
+    //Nome do produto
+    lista.add(Produtos("nome", "desc", 30.00, "lib/images/", "Massas"));
+
+    //Nome do produto
+    lista.add(Produtos("nome", "desc", 30.00, "lib/images/", "Massas"));
+
+    //Nome do produto
+    lista.add(Produtos("nome", "desc", 30.00, "lib/images/", "Massas"));
+>>>>>>> 1dfa5c79d3b7bda7ca9eea517d77426412d0c88c
 
     //===========================================================
     //                         Saladas                          =
     //===========================================================
 
     lista.add(Produtos(
-      "Abacaxi",
+      "Salada Tropical",
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec accumsan laoreet mauris. Nunc maximus nulla at velit pellentesque auctor. Donec non sollicitudin odio. Morbi iaculis vehicula nibh, non lobortis orci tristique in.",
-      55.00,
+      35.00,
       "lib/images/img1.png",
       "Saladas",
     ));
 
+<<<<<<< HEAD
     //Salada Caesar
     lista.add(Produtos(
       "Salada Caesar", 
@@ -390,81 +460,61 @@ class Produtos {
       "lib/images/saladas/salada_simples/", 
       "Saladas")
     );
+=======
+    //Nome do produto
+    lista.add(Produtos("nome", "desc", 30.00, "lib/images/", "Saladas"));
+
+    //Nome do produto
+    lista.add(Produtos("nome", "desc", 30.00, "lib/images/", "Saladas"));
+
+    //Nome do produto
+    lista.add(Produtos("nome", "desc", 30.00, "lib/images/", "Saladas"));
+
+    //Nome do produto
+    lista.add(Produtos("nome", "desc", 30.00, "lib/images/", "Saladas"));
+
+    //Nome do produto
+    lista.add(Produtos("nome", "desc", 30.00, "lib/images/", "Saladas"));
+
+    //Nome do produto
+    lista.add(Produtos("nome", "desc", 30.00, "lib/images/", "Saladas"));
+
+    //Nome do produto
+    lista.add(Produtos("nome", "desc", 30.00, "lib/images/", "Saladas"));
+>>>>>>> 1dfa5c79d3b7bda7ca9eea517d77426412d0c88c
 
     //===========================================================
     //                         Promocoes                        =
     //===========================================================
 
     lista.add(Produtos(
-      "Abacaxi",
+      "Combo 2 Pizzas Tradicionais",
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec accumsan laoreet mauris. Nunc maximus nulla at velit pellentesque auctor. Donec non sollicitudin odio. Morbi iaculis vehicula nibh, non lobortis orci tristique in.",
-      55.00,
+      105.00,
       "lib/images/img1.png",
       "Promoções",
     ));
 
     //Nome do produto
-    lista.add(Produtos(
-      "nome", 
-      "desc", 
-      30.00, 
-      "lib/images/", 
-      "Promoções")
-    );
-    
-    //Nome do produto
-    lista.add(Produtos(
-      "nome", 
-      "desc", 
-      30.00, 
-      "lib/images/", 
-      "Promoções")
-    );
+    lista.add(Produtos("nome", "desc", 30.00, "lib/images/", "Promoções"));
 
     //Nome do produto
-    lista.add(Produtos(
-      "nome", 
-      "desc", 
-      30.00, 
-      "lib/images/", 
-      "Promoções")
-    );
+    lista.add(Produtos("nome", "desc", 30.00, "lib/images/", "Promoções"));
 
     //Nome do produto
-    lista.add(Produtos(
-      "nome", 
-      "desc", 
-      30.00, 
-      "lib/images/", 
-      "Promoções")
-    );
+    lista.add(Produtos("nome", "desc", 30.00, "lib/images/", "Promoções"));
 
     //Nome do produto
-    lista.add(Produtos(
-      "nome", 
-      "desc", 
-      30.00, 
-      "lib/images/", 
-      "Promoções")
-    );
+    lista.add(Produtos("nome", "desc", 30.00, "lib/images/", "Promoções"));
 
     //Nome do produto
-    lista.add(Produtos(
-      "nome", 
-      "desc", 
-      30.00, 
-      "lib/images/", 
-      "Promoções")
-    );
+    lista.add(Produtos("nome", "desc", 30.00, "lib/images/", "Promoções"));
 
     //Nome do produto
-    lista.add(Produtos(
-      "nome", 
-      "desc", 
-      30.00, 
-      "lib/images/", 
-      "Promoções")
-    );
+    lista.add(Produtos("nome", "desc", 30.00, "lib/images/", "Promoções"));
+
+    //Nome do produto
+    lista.add(Produtos("nome", "desc", 30.00, "lib/images/", "Promoções"));
 
     //===========================================================
     return lista;
