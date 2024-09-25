@@ -87,6 +87,7 @@ class _CarrinhoViewState extends State<CarrinhoView> {
                           },
                           child: Icon(
                             Icons.cancel_outlined,
+                            size: 30,
                             color: Colors.red.shade900,
                           ),
                         ),
