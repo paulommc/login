@@ -16,7 +16,8 @@ class _CarrinhoViewState extends State<CarrinhoView> {
   @override
   Widget build(BuildContext context) {
     // Calcula a soma total dos itens
-    double total = itens.fold(0, (soma, item) => soma + item['valor']);
+    double total = itens.fold(
+        0, (soma, item) => soma + (item['valor'] * item['quantidade']));
     if (itens.isEmpty) {
       return MaterialApp(
         debugShowCheckedModeBanner: false,
@@ -124,17 +125,69 @@ class _CarrinhoViewState extends State<CarrinhoView> {
                               height: 50,
                             ),
                           ),
-                          trailing: InkWell(
-                            onTap: () {
-                              setState(() {
-                                itens.removeAt(index);
-                              });
-                            },
-                            child: Icon(
-                              Icons.cancel_outlined,
-                              size: 30,
-                              color: Colors.red.shade900,
-                            ),
+                          trailing: Row(
+                            mainAxisSize: MainAxisSize
+                                .min, // Importante para limitar o espaço
+                            children: [
+                              InkWell(
+                                //Remover quantidade
+                                onTap: () {
+                                  setState(
+                                    () {
+                                      if (itens[index]['quantidade'] > 1) {
+                                        itens[index]['quantidade'] -= 1;
+                                      }
+                                    },
+                                  );
+                                },
+                                child: Icon(
+                                  Icons.remove_circle_outline,
+                                  size: 30,
+                                  color: Colors.red.shade900,
+                                ),
+                              ),
+
+                              Text(
+                                itens[index]['quantidade'].toString(),
+                                style: TextStyle(
+                                  color: Colors.red.shade900,
+                                  fontSize: 16,
+                                ),
+                              ),
+                              InkWell(
+                                //Adicionar quantidade
+                                onTap: () {
+                                  setState(
+                                    () {
+                                      itens[index]['quantidade'] += 1;
+                                    },
+                                  );
+                                },
+                                child: Icon(
+                                  Icons.add_circle_outline,
+                                  size: 30,
+                                  color: Colors.green.shade900,
+                                ),
+                              ),
+                              SizedBox(
+                                  width:
+                                      12), // Espaçamento entre o texto e o ícone
+                              InkWell(
+                                // Remover Item do carrinho
+                                onTap: () {
+                                  setState(
+                                    () {
+                                      itens.removeAt(index);
+                                    },
+                                  );
+                                },
+                                child: Icon(
+                                  Icons.cancel_outlined,
+                                  size: 30,
+                                  color: Colors.red.shade900,
+                                ),
+                              ),
+                            ],
                           ),
                         ),
                       );

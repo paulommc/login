@@ -128,11 +128,23 @@ class _DetalhesViewState extends State<DetalhesView> {
                       duration: Duration(seconds: 3),
                     ),
                   );
-                  Carrinho().itens.add({
-                    'nome': dados.nome,
-                    'valor': dados.valor,
-                    'imagem': dados.imagem,
-                  });
+                  //var itensCarrinho = Carrinho();
+                  int posicao = Carrinho()
+                      .itens
+                      .indexWhere((item) => item['nome'] == dados.nome);
+                  // verifica se o nome do produto ja existe no carrinho
+                  if (posicao == -1) {
+                    //se não existe adiciona o produto
+                    Carrinho().itens.add({
+                      'nome': dados.nome,
+                      'valor': dados.valor,
+                      'imagem': dados.imagem,
+                      'quantidade': 1,
+                    });
+                  } else {
+                    // se ja existir adiciona 1 n quantidade
+                    Carrinho().itens[posicao]['quantidade'] += 1;
+                  }
                 },
                 child: Padding(
                   padding: const EdgeInsets.symmetric(
