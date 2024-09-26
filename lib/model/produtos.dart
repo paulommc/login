@@ -53,7 +53,7 @@ class Produtos {
     //                          Especiais                       =
     //===========================================================
 
-    lista.add(Produtos("Abacaxi grelahado",
+    lista.add(Produtos("Abacaxi grelhado",
       "Abacaxi", 55.00,
       "lib/images/img1.png",
       "Especiais",)
