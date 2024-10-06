@@ -19,6 +19,7 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   assets:
+    - lib/images/
   #bebidas
     - lib/images/bebidas/abacaxi_hortela.png
     - lib/images/bebidas/agua.png

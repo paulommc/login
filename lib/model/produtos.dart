@@ -22,7 +22,7 @@ class Produtos {
     );
 
     //Atum
-    lista.add(Produtos("Atum", "Piza de atum", 45.00,
+    lista.add(Produtos("Atum", "Pizza de atum", 45.00,
       "lib/images/pizzas/atum.png", "Tradicionais",)
     );
 
@@ -32,7 +32,7 @@ class Produtos {
     );
 
     //Havaiana
-    lista.add(Produtos("Havaiana", "Abacai, presunto", 45.00,
+    lista.add(Produtos("Havaiana", "Abacaxi, presunto", 45.00,
       "lib/images/pizzas/havaiana.png", "Tradicionais")
     );
 
@@ -53,11 +53,6 @@ class Produtos {
     //                          Especiais                       =
     //===========================================================
 
-    lista.add(Produtos("Abacaxi grelhado",
-      "Abacaxi", 55.00,
-      "lib/images/img1.png",
-      "Especiais",)
-    );
 
     //Caranguejo c/ amendoim
     lista.add(Produtos("Caranguejo c/ amendoim", "Caranguejo assado com pedaços de amendoim torrado e salsinha", 
@@ -81,7 +76,7 @@ class Produtos {
 
     //Risoto de camarao
     lista.add(Produtos("Risoto de camarão", "Arroz, camarão, cebolinha, creme de leite, leite, salsinha", 30.00, 
-      "lib/images/especiais", "Especiais")
+      "lib/images/risoto_camarao.png", "Especiais")
     );
 
     //Salmao grelhado
@@ -99,7 +94,7 @@ class Produtos {
     );
 
     //Agua
-    lista.add(Produtos( "Água", "Água mineral", 5.00, "lib/images/img1.png", "Bebidas",));
+    lista.add(Produtos( "Água", "Água mineral", 5.00, "lib/images/agua.png", "Bebidas",));
 
     //Cupuacu
     lista.add(Produtos("Suco de cupuaçu", "Cupuaçu", 25.00,
@@ -140,17 +135,17 @@ class Produtos {
 
     //churros de chocolate
     lista.add(Produtos("Churros de chocolate", "Churros de chocolate", 30.00, 
-      "lib/images/sobremesas", "Sobremesas")
+      "lib/images/sobremesas/churros_chocolate.png", "Sobremesas")
     );
     
     //Churros de doce de leite
     lista.add(Produtos("Churros de doce de leite", "Churros de doce de leite", 30.00, 
-      "lib/images/sobremesas", "Sobremesas")
+      "lib/images/sobremesas/churros_leite.png", "Sobremesas")
     );
 
     //Petit Gateau
     lista.add(Produtos("Petit Gateau", "Um bolo de chocolate recheado de chocolate, acompanhado com sorvete", 30.00, 
-      "lib/images/sobremesas", "Sobremesas")
+      "lib/images/sobremesas/petit_gateau.png", "Sobremesas")
     );
 
     //sorvete de baunilha
@@ -232,7 +227,7 @@ class Produtos {
 
     //Salada simples
     lista.add(Produtos("Salada simples", "Alface, tomate, cenoura, cebola roxa, ", 30.00, 
-      "lib/images/saladas/salada_simples/", "Saladas")
+      "lib/images/saladas/salada_simples.png", "Saladas")
     );
 
     //===========================================================
