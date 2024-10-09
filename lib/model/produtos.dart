@@ -76,7 +76,7 @@ class Produtos {
 
     //Risoto de camarao
     lista.add(Produtos("Risoto de camarão", "Arroz, camarão, cebolinha, creme de leite, leite, salsinha", 30.00, 
-      "lib/images/risoto_camarao.png", "Especiais")
+      "lib/images/especiais/risoto_camarao.png", "Especiais")
     );
 
     //Salmao grelhado
@@ -94,7 +94,7 @@ class Produtos {
     );
 
     //Agua
-    lista.add(Produtos( "Água", "Água mineral", 5.00, "lib/images/agua.png", "Bebidas",));
+    lista.add(Produtos( "Água", "Água mineral", 5.00, "lib/images/bebidas/agua.png", "Bebidas",));
 
     //Cupuacu
     lista.add(Produtos("Suco de cupuaçu", "Cupuaçu", 25.00,
@@ -162,19 +162,27 @@ class Produtos {
     //                         Entradas                           =
     //===========================================================
 
-    lista.add(Produtos("Batata Frita", "Batata frita", 30.00, "lib/images/img1.png", "Entradas"));
+    lista.add(Produtos("Batata Frita", "Batata frita", 30.00, "lib/images/entrada/batata_frita.png", "Entradas"));
+
+    lista.add(Produtos("Hamburguinhos", "Hamburguers, mas pequenos", 25,
+     "lib/images/entrada/hamburguinhos.png", "Entradas"
+    ));
+
+    lista.add(Produtos("Salgadinhos", "salgadinhos para abrir o apetite", 25,
+     "lib/images/entrada/salgadinhos.png", "Entradas"
+     ));
 
     //===========================================================
     //                         Massas                           =
     //===========================================================
 
     lista.add(Produtos("Espaguete", "espaguete, molho de tomate ou molho branco. Acompanha queijo ralado",
-      45.00, "lib/images/img1.png","Massas",)
+      45.00, "lib/images/massas/espaguete.png","Massas",)
     );
 
     //Lasanha vegetariana
     lista.add(Produtos("Lasanja vegetariana", "Berinjela, queijo, molho de tomate, salsinha",
-      30.00, "lib/images/lasanha_berinjela.png", "Massas")
+      30.00, "lib/images/massas/lasanha_berinjela.png", "Massas")
     );
     
     //Lasanha
@@ -204,7 +212,7 @@ class Produtos {
 
     //torta_frango
     lista.add(Produtos("Torta de frango", "Frango, ervilha, requeijão", 30.00, 
-      "lib/images/massas/torta_frango", "Massas")
+      "lib/images/massas/torta_frango.png", "Massas")
     );
 
     //===========================================================
@@ -212,7 +220,7 @@ class Produtos {
     //===========================================================
 
     lista.add(Produtos("Salada Tropical", "salada tropical" ,35.00,
-      "lib/images/img1.png", "Saladas",)
+      "lib/images/saladas/salada_tropical.png", "Saladas",)
     );
 
     //Salada Caesar
