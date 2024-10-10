@@ -116,7 +116,7 @@ class _CarrinhoViewState extends State<CarrinhoView> {
                               fontStyle: FontStyle.italic,
                             ),
                           ),
-                          leading: Container(
+                          leading: SizedBox(
                             width: 50,
                             height: 50,
                             child: Image.asset(
