@@ -244,29 +244,24 @@ class Produtos {
 
     lista.add(Produtos(
       "Combo 2 Pizzas Tradicionais", "Pizzas tamanho grande", 105.00,
-      "lib/images/img1.png", "Promoções")
+      "lib/images/promocoes/combo_pizzas.png", "Promoções")
     );
 
     //Nome do produto
-    lista.add(Produtos("nome", "desc", 30.00, "lib/images/", "Promoções"));
+    lista.add(Produtos("Casquinha em dobro", "Pague uma casquinha, leve duas", 5.50,
+     "lib/images/promocoes/casquinha_dobro.png", "Promoções"));
 
     //Nome do produto
-    lista.add(Produtos("nome", "desc", 30.00, "lib/images/", "Promoções"));
+    lista.add(Produtos("Combo rápido", "Uma porção de hamburguinhos, batata frita e salgadinhos", 
+      30.00, "lib/images/promocoes/combo_rapido.png", "Promoções"));
 
     //Nome do produto
-    lista.add(Produtos("nome", "desc", 30.00, "lib/images/", "Promoções"));
+    lista.add(Produtos("Dia de praia 01", "Risoto de camarão e batata frita",
+      30.00, "lib/images/promocoes/dia_de_praia01.png", "Promoções"));
 
     //Nome do produto
-    lista.add(Produtos("nome", "desc", 30.00, "lib/images/", "Promoções"));
-
-    //Nome do produto
-    lista.add(Produtos("nome", "desc", 30.00, "lib/images/", "Promoções"));
-
-    //Nome do produto
-    lista.add(Produtos("nome", "desc", 30.00, "lib/images/", "Promoções"));
-
-    //Nome do produto
-    lista.add(Produtos("nome", "desc", 30.00, "lib/images/", "Promoções"));
+    lista.add(Produtos("Dia de praia 02", "Risoto de camarão e caranguejo assado",
+      30.00, "lib/images/promocoes/dia_de_praia02.png", "Promoções"));
 
     //===========================================================
     return lista;

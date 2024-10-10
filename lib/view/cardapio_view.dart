@@ -89,7 +89,7 @@ class _CardapioViewState extends State<CardapioView> {
 
                 //leading: Icon(Icons.contact_page_outlined), // lado esquerdo
                 //leading: Image.network(lista[index].foto),
-                leading: Container(
+                leading: SizedBox(
                   width: 50,
                   height: 50,
                   child: Image.asset(
