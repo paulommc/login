@@ -23,8 +23,9 @@ class Produtos {
         "lib/images/pizzas/4queijos.png", "Tradicionais", 0));
 
     //Atum
-    lista.add(Produtos("Atum", "Piza de atum", 45.00,
-        "lib/images/pizzas/atum.png", "Tradicionais", 0));
+    lista.add(Produtos("Atum", "Pizza de atum", 45.00,
+      "lib/images/pizzas/atum.png", "Tradicionais", 0)
+    );
 
     //Frango c/ catupiry
     lista.add(Produtos(
@@ -36,8 +37,9 @@ class Produtos {
         0));
 
     //Havaiana
-    lista.add(Produtos("Havaiana", "Abacai, presunto", 45.00,
-        "lib/images/pizzas/havaiana.png", "Tradicionais", 0));
+    lista.add(Produtos("Havaiana", "Abacaxi, presunto", 45.00,
+      "lib/images/pizzas/havaiana.png", "Tradicionais", 0)
+    );
 
     //Marguerita
     lista.add(Produtos("Marguerita", "Oregano, manjericão, mussarela, tomate",
@@ -54,8 +56,6 @@ class Produtos {
     //                          Especiais                       =
     //===========================================================
 
-    lista.add(Produtos("Abacaxi grelhado", "Abacaxi", 55.00,
-        "lib/images/img1.png", "Especiais", 0));
 
     //Caranguejo c/ amendoim
     lista.add(Produtos(
@@ -84,13 +84,9 @@ class Produtos {
         "lib/images/especiais/picanha.png", "Especiais", 0));
 
     //Risoto de camarao
-    lista.add(Produtos(
-        "Risoto de camarão",
-        "Arroz, camarão, cebolinha, creme de leite, leite, salsinha",
-        30.00,
-        "lib/images/especiais",
-        "Especiais",
-        0));
+    lista.add(Produtos("Risoto de camarão", "Arroz, camarão, cebolinha, creme de leite, leite, salsinha", 30.00, 
+      "lib/images/especiais/risoto_camarao.png", "Especiais", 0)
+    );
 
     //Salmao grelhado
     lista.add(Produtos(
@@ -110,8 +106,7 @@ class Produtos {
         "lib/images/bebidas/abacaxi_hortela.png", "Bebidas", 0));
 
     //Agua
-    lista.add(Produtos(
-        "Água", "Água mineral", 5.00, "lib/images/img1.png", "Bebidas", 0));
+    lista.add(Produtos( "Água", "Água mineral", 5.00, "lib/images/bebidas/agua.png", "Bebidas", 0));
 
     //Cupuacu
     lista.add(Produtos("Suco de cupuaçu", "Cupuaçu", 25.00,
@@ -146,21 +141,19 @@ class Produtos {
         30.00, "lib/images/sobremesas/banana_split.png", "Sobremesas", 0));
 
     //churros de chocolate
-    lista.add(Produtos("Churros de chocolate", "Churros de chocolate", 30.00,
-        "lib/images/sobremesas", "Sobremesas", 0));
-
+    lista.add(Produtos("Churros de chocolate", "Churros de chocolate", 30.00, 
+      "lib/images/sobremesas/churros_chocolate.png", "Sobremesas", 0)
+    );
+    
     //Churros de doce de leite
-    lista.add(Produtos("Churros de doce de leite", "Churros de doce de leite",
-        30.00, "lib/images/sobremesas", "Sobremesas", 0));
+    lista.add(Produtos("Churros de doce de leite", "Churros de doce de leite", 30.00, 
+      "lib/images/sobremesas/churros_leite.png", "Sobremesas", 0)
+    );
 
     //Petit Gateau
-    lista.add(Produtos(
-        "Petit Gateau",
-        "Um bolo de chocolate recheado de chocolate, acompanhado com sorvete",
-        30.00,
-        "lib/images/sobremesas",
-        "Sobremesas",
-        0));
+    lista.add(Produtos("Petit Gateau", "Um bolo de chocolate recheado de chocolate, acompanhado com sorvete", 30.00, 
+      "lib/images/sobremesas/petit_gateau.png", "Sobremesas", 0)
+    );
 
     //sorvete de baunilha
     lista.add(Produtos("Sorvete de baunilha", "Sorvete de baunilha", 30.00,
@@ -175,28 +168,31 @@ class Produtos {
     //===========================================================
 
     lista.add(Produtos("Batata Frita", "Batata frita", 30.00,
-        "lib/images/img1.png", "Entradas", 0));
+     "lib/images/entrada/batata_frita.png", "Entradas" , 0
+    ));
+
+    lista.add(Produtos("Hamburguinhos", "Hamburguers, mas pequenos", 25,
+     "lib/images/entrada/hamburguinhos.png", "Entradas", 0
+    ));
+
+    lista.add(Produtos("Salgadinhos", "salgadinhos para abrir o apetite", 25,
+     "lib/images/entrada/salgadinhos.png", "Entradas", 0
+    ));
 
     //===========================================================
     //                         Massas                           =
     //===========================================================
 
-    lista.add(Produtos(
-        "Espaguete",
-        "espaguete, molho de tomate ou molho branco. Acompanha queijo ralado",
-        45.00,
-        "lib/images/img1.png",
-        "Massas",
-        0));
+
+    lista.add(Produtos("Espaguete", "espaguete, molho de tomate ou molho branco. Acompanha queijo ralado",
+      45.00, "lib/images/massas/espaguete.png","Massas", 0)
+    );
 
     //Lasanha vegetariana
-    lista.add(Produtos(
-        "Lasanja vegetariana",
-        "Berinjela, queijo, molho de tomate, salsinha",
-        30.00,
-        "lib/images/lasanha_berinjela.png",
-        "Massas",
-        0));
+    lista.add(Produtos("Lasanja vegetariana", "Berinjela, queijo, molho de tomate, salsinha",
+      30.00, "lib/images/massas/lasanha_berinjela.png", "Massas", 0)
+    );
+    
 
     //Lasanha
     lista.add(Produtos(
@@ -239,15 +235,19 @@ class Produtos {
         0));
 
     //torta_frango
-    lista.add(Produtos("Torta de frango", "Frango, ervilha, requeijão", 30.00,
-        "lib/images/massas/torta_frango", "Massas", 0));
+
+    lista.add(Produtos("Torta de frango", "Frango, ervilha, requeijão", 30.00, 
+      "lib/images/massas/torta_frango.png", "Massas", 0)
+    );
 
     //===========================================================
     //                         Saladas                          =
     //===========================================================
 
-    lista.add(Produtos("Salada Tropical", "salada tropical", 35.00,
-        "lib/images/img1.png", "Saladas", 0));
+
+    lista.add(Produtos("Salada Tropical", "salada tropical" ,35.00,
+      "lib/images/saladas/salada_tropical.png", "Saladas", 0)
+    );
 
     //Salada Caesar
     lista.add(Produtos(
@@ -268,41 +268,38 @@ class Produtos {
         0));
 
     //Salada simples
-    lista.add(Produtos(
-        "Salada simples",
-        "Alface, tomate, cenoura, cebola roxa, ",
-        30.00,
-        "lib/images/saladas/salada_simples/",
-        "Saladas",
-        0));
+    lista.add(Produtos("Salada simples", "Alface, tomate, cenoura, cebola roxa, ", 30.00, 
+      "lib/images/saladas/salada_simples.png", "Saladas", 0)
+    );
 
     //===========================================================
     //                         Promocoes                        =
     //===========================================================
 
-    lista.add(Produtos("Combo 2 Pizzas Tradicionais", "Pizzas tamanho grande",
-        105.00, "lib/images/img1.png", "Promoções", 0));
+    lista.add(Produtos(
+      "Combo 2 Pizzas Tradicionais", "Pizzas tamanho grande", 105.00,
+      "lib/images/promocoes/combo_pizzas.png", "Promoções", 0)
+    );
 
     //Nome do produto
-    lista.add(Produtos("nome", "desc", 30.00, "lib/images/", "Promoções", 0));
+    lista.add(Produtos("Casquinha em dobro", "Pague uma casquinha, leve duas", 5.50,
+     "lib/images/promocoes/casquinha_dobro.png", "Promoções", 0
+    ));
 
     //Nome do produto
-    lista.add(Produtos("nome", "desc", 30.00, "lib/images/", "Promoções", 0));
+    lista.add(Produtos("Combo rápido", "Uma porção de hamburguinhos, batata frita e salgadinhos", 
+      30.00, "lib/images/promocoes/combo_rapido.png", "Promoções", 0
+    ));
 
     //Nome do produto
-    lista.add(Produtos("nome", "desc", 30.00, "lib/images/", "Promoções", 0));
+    lista.add(Produtos("Dia de praia 01", "Risoto de camarão e batata frita",
+      30.00, "lib/images/promocoes/dia_de_praia01.png", "Promoções", 0
+    ));
 
     //Nome do produto
-    lista.add(Produtos("nome", "desc", 30.00, "lib/images/", "Promoções", 0));
-
-    //Nome do produto
-    lista.add(Produtos("nome", "desc", 30.00, "lib/images/", "Promoções", 0));
-
-    //Nome do produto
-    lista.add(Produtos("nome", "desc", 30.00, "lib/images/", "Promoções", 0));
-
-    //Nome do produto
-    lista.add(Produtos("nome", "desc", 30.00, "lib/images/", "Promoções", 0));
+    lista.add(Produtos("Dia de praia 02", "Risoto de camarão e caranguejo assado",
+      30.00, "lib/images/promocoes/dia_de_praia02.png", "Promoções", 0
+    ));
 
     //===========================================================
     return lista;
