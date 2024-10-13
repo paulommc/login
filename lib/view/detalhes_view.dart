@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:login/model/carrinho.dart';
+import 'package:login/model/customAppBar.dart';
 import '../model/produtos.dart';
 //import '../model/carrinho.dart';
 
@@ -65,6 +66,12 @@ class _DetalhesViewState extends State<DetalhesView> {
             ),
           ],
         ),
+        //Tentativa de unir em uma única classe
+        /* appBar: CustomAppBar(
+          title: dados.nome, // Título dinâmico com o nome do item
+          showCart: true, // O carrinho será exibido
+          showLogout: true, // O botão de logout será exibido
+        ), */
         body: Container(
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(5),
@@ -113,10 +120,7 @@ class _DetalhesViewState extends State<DetalhesView> {
                   ),
                   subtitle: Text(
                     dados.descricao,
-                    style: TextStyle(
-                      fontSize: 18,
-                      color: Colors.black
-                      ),
+                    style: TextStyle(fontSize: 18, color: Colors.black),
                     textAlign: TextAlign.justify,
                   ),
                 ),

@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
+import 'package:login/model/customAppBar.dart';
 import '../model/categoria.dart';
 
 class CategoriasView extends StatefulWidget {
@@ -23,7 +24,7 @@ class _CategoriasViewState extends State<CategoriasView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
+      /* appBar: AppBar(
         leading: InkWell(
           onTap: () {
             Navigator.pop(context);
@@ -63,6 +64,12 @@ class _CategoriasViewState extends State<CategoriasView> {
             ),
           ),
         ],
+      ), */
+      //Única que funcionou
+      appBar: CustomAppBar(
+        title: 'Selecione a Categoria',
+        showCart: true, // O carrinho será exibido
+        showLogout: true, // O botão de logout será exibido
       ),
       body: Container(
         decoration: BoxDecoration(
@@ -150,59 +157,6 @@ class _CategoriasViewState extends State<CategoriasView> {
           ),
         ),
       ),
-
-      /* body: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: GridView.builder(
-          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 2, // 2 por linha
-            crossAxisSpacing: 10,
-            mainAxisSpacing: 10,
-            childAspectRatio: 3 / 2,
-          
-          ),
-          itemCount: lista.length,
-          itemBuilder: (context, index) {
-            return Card(
-              elevation: 4,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(10),
-              ),
-
-              child: InkWell(
-                onTap: () {
-                  //retornar o item da lista selecionado
-                  var dados = lista[index].catNome;
-                  //navegar para a tela DetalhesView
-                  Navigator.pushNamed(context, 'cardapio', arguments: dados);
-                },
-                
-                child: 
-                  Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Image.asset(
-                        lista[index].catImagem,
-                        width: 50,
-                        height: 50,
-                      ),
-                      SizedBox(height: 10),
-                      Text(
-                        lista[index].catNome,
-                        style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.bold,
-                        ),
-                        textAlign: TextAlign.center,
-                      ),
-                    ],
-                  ),
-                
-              ),
-            );
-          },
-        ),
-      ), */
     );
   }
 }

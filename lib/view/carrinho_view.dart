@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
+import 'package:login/model/customAppBar.dart';
 import '../model/carrinho.dart';
 
 class CarrinhoView extends StatefulWidget {
@@ -52,6 +53,12 @@ class _CarrinhoViewState extends State<CarrinhoView> {
               ),
             ],
           ),
+          //Tentativa de unir em uma única classe
+          /* appBar: CustomAppBar(
+            title: 'Seu Pedido',
+            showCart: false, // Não exibe o botão do carrinho
+            showLogout: true, // O botão de logout será exibido
+          ), */
           body: Container(
             decoration: BoxDecoration(
                 gradient: LinearGradient(
@@ -110,19 +117,25 @@ class _CarrinhoViewState extends State<CarrinhoView> {
               ),
             ],
           ),
+            
+          /* appBar: CustomAppBar(
+            title: 'Seu Pedido',
+            showCart: false, // Não exibe o botão do carrinho
+            showLogout: true, // O botão de logout será exibido
+          ), */
           body: Container(
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(5),
+                borderRadius: BorderRadius.circular(5),
                 gradient: LinearGradient(
-              colors: [
-                const Color.fromARGB(
-                    255, 255, 227, 212), // Começa com uma cor mais clara
-                const Color.fromARGB(
-                    255, 255, 198, 168), // Termina com uma cor mais escura
-              ],
-              begin: Alignment.topCenter,
-              end: Alignment.bottomCenter,
-            )),
+                  colors: [
+                    const Color.fromARGB(
+                        255, 255, 227, 212), // Começa com uma cor mais clara
+                    const Color.fromARGB(
+                        255, 255, 198, 168), // Termina com uma cor mais escura
+                  ],
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                )),
             child: Column(
               children: [
                 // Lista de produtos
@@ -136,7 +149,7 @@ class _CarrinhoViewState extends State<CarrinhoView> {
                           child: ListTile(
                             title: Text(
                               itens[index]['nome'],
-                              style: TextStyle(fontSize: 24),
+                              style: TextStyle(fontSize: 20),
                             ),
                             subtitle: Text(
                               "R\$ ${itens[index]['valor'].toStringAsFixed(2).replaceAll('.', ',')}",
@@ -175,14 +188,15 @@ class _CarrinhoViewState extends State<CarrinhoView> {
                                     color: Colors.red.shade900,
                                   ),
                                 ),
-
+                                SizedBox(width: 3,),
                                 Text(
                                   itens[index]['quantidade'].toString(),
                                   style: TextStyle(
                                     color: Colors.red.shade900,
-                                    fontSize: 16,
+                                    fontSize: 20,
                                   ),
                                 ),
+                                SizedBox(width: 3,),
                                 InkWell(
                                   //Adicionar quantidade
                                   onTap: () {
@@ -200,7 +214,7 @@ class _CarrinhoViewState extends State<CarrinhoView> {
                                 ),
                                 SizedBox(
                                     width:
-                                        12), // Espaçamento entre o texto e o ícone
+                                      16), // Espaçamento entre o texto e o ícone
                                 InkWell(
                                   // Remover Item do carrinho
                                   onTap: () {

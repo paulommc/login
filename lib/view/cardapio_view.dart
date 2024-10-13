@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
+import 'package:login/model/customAppBar.dart';
 import '../model/produtos.dart';
 
 class CardapioView extends StatefulWidget {
@@ -24,7 +25,7 @@ class _CardapioViewState extends State<CardapioView> {
   Widget build(BuildContext context) {
     categoria = ModalRoute.of(context)!.settings.arguments as String;
     return Scaffold(
-      appBar: AppBar(
+      /* appBar: AppBar(
         leading: InkWell(
           onTap: () {
             Navigator.pop(context);
@@ -64,7 +65,12 @@ class _CardapioViewState extends State<CardapioView> {
             ),
           ),
         ],
-      ),
+      ), */
+      appBar: CustomAppBar(
+    title: categoria,  // Título dinâmico da categoria
+    showCart: true,    // O carrinho será exibido
+    showLogout: true,  // O botão de logout será exibido
+  ),
       body: Container(
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(5),
