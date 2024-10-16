@@ -19,59 +19,16 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   assets:
-  #bebidas
-    - lib/images/bebidas/abacaxi_hortela.png
-    - lib/images/bebidas/agua.png
-    - lib/images/bebidas/cupuacu.png
-    - lib/images/bebidas/graviola.png
-    - lib/images/bebidas/laranja.png
-    - lib/images/bebidas/limao.png
-    - lib/images/bebidas/morango.png
-    - lib/images/bebidas/uva.png
-  # categorias
-    - lib/images/categorias/bebidas.png 
-    - lib/images/categorias/entradas.png
-    - lib/images/categorias/especiais.png 
-    - lib/images/categorias/massas.png
-    - lib/images/categorias/promocoes.png 
-    - lib/images/categorias/saladas.png 
-    - lib/images/categorias/sobremesas.png 
-    - lib/images/categorias/tradicionais.png
-  #especiais
-    - lib/images/especiais/caranguejo_amendoim.png
-    - lib/images/especiais/carbonara.png
-    - lib/images/especiais/lagosta.png
-    - lib/images/especiais/picanha.png
-    - lib/images/especiais/risoto_camarao.png
-    - lib/images/especiais/salmao_grelhado.png
-  #massas
-    - lib/images/massas/lasanha_berinjela.png
-    - lib/images/massas/lasanha.png
-    - lib/images/massas/macarrao_alho_oleo.png
-    - lib/images/massas/massa_fresca.png
-    - lib/images/massas/nhoque.png
-    - lib/images/massas/pastel_salmao.png
-    - lib/images/massas/torta_frango.png
-  #pizzas
-    - lib/images/pizzas/atum.png
-    - lib/images/pizzas/4queijos.png
-    - lib/images/pizzas/banana_canela.png
-    - lib/images/pizzas/chocolate.png
-    - lib/images/pizzas/Frango_Catupiry.png
-    - lib/images/pizzas/havaiana.png
-    - lib/images/pizzas/marguerita.png
-    - lib/images/pizzas/mussarela.png
-    - lib/images/pizzas/portuguesa.png
-  #saladas
-    - lib/images/saladas/salada_caesar.png
-    - lib/images/saladas/salada_de_fruta.png
-    - lib/images/saladas/salada_simples.png
-  #sobremesas
-    - lib/images/sobremesas/banana_split.png
-    - lib/images/sobremesas/churros_chocolate.png
-    - lib/images/sobremesas/churros_leite.png
-    - lib/images/sobremesas/petit_gateau.png
-    - lib/images/sobremesas/sorvete_baunilha.png
-    - lib/images/sobremesas/sorvete_chocolate.png
+
+    - lib/images/bebidas/
+    - lib/images/categorias/
+    - lib/images/entrada/
+    - lib/images/especiais/
+    - lib/images/massas/
+    - lib/images/pizzas/
+    - lib/images/promocoes/
+    - lib/images/sobremesas/
+    - lib/images/saladas/
+
   #outros
     - lib/images/img1.png
