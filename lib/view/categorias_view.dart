@@ -1,7 +1,8 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
+//import 'package:login/model/customAppBar.dart';
 import 'package:flutter/material.dart';
-import 'package:login/model/customAppBar.dart';
+import 'package:login/view/components/my_componets.dart';
 import '../model/categoria.dart';
 
 class CategoriasView extends StatefulWidget {
@@ -24,53 +25,7 @@ class _CategoriasViewState extends State<CategoriasView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      /* appBar: AppBar(
-        leading: InkWell(
-          onTap: () {
-            Navigator.pop(context);
-          },
-          child: Icon(
-            Icons.arrow_back_ios,
-            color: Colors.orange,
-          ),
-        ),
-        title: Text(
-          'Selecione a Categoria',
-          style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-        ),
-        centerTitle: true,
-        actions: <Widget>[
-          Padding(
-            padding: const EdgeInsets.only(right: 10),
-            child: IconButton(
-              icon: const Icon(Icons.shopping_cart),
-              color: Colors.orange,
-              tooltip: 'Ver seu pedido',
-              onPressed: () {
-                Navigator.pushNamed(context, 'carrinho');
-              },
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(right: 10),
-            child: IconButton(
-              icon: const Icon(Icons.logout),
-              color: Colors.orange,
-              tooltip: 'Sair',
-              onPressed: () {
-                Navigator.pushNamedAndRemoveUntil(
-                    context, 'login', (Route<dynamic> route) => false);
-              },
-            ),
-          ),
-        ],
-      ), */
-      //Única que funcionou
-      appBar: CustomAppBar(
-        title: 'Selecione a Categoria',
-        showCart: true, // O carrinho será exibido
-        showLogout: true, // O botão de logout será exibido
-      ),
+      appBar: MyComponets().GeraAppBar('Selecione a Categoria', 'Ver seu pedido', true, context),
       body: Container(
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(5),

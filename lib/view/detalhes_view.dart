@@ -1,8 +1,9 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
+//import 'package:login/model/customAppBar.dart';
 import 'package:flutter/material.dart';
 import 'package:login/model/carrinho.dart';
-import 'package:login/model/customAppBar.dart';
+import 'package:login/view/components/my_componets.dart';
 import '../model/produtos.dart';
 //import '../model/carrinho.dart';
 
@@ -25,53 +26,7 @@ class _DetalhesViewState extends State<DetalhesView> {
       debugShowCheckedModeBanner: false,
       scaffoldMessengerKey: msgKey,
       home: Scaffold(
-        appBar: AppBar(
-          leading: InkWell(
-            onTap: () {
-              Navigator.pop(context);
-            },
-            child: Icon(
-              Icons.arrow_back_ios,
-              color: Colors.orange,
-            ),
-          ),
-          title: Text(
-            dados.nome,
-            style: TextStyle(fontWeight: FontWeight.bold),
-          ),
-          centerTitle: true,
-          actions: <Widget>[
-            Padding(
-              padding: const EdgeInsets.only(right: 10),
-              child: IconButton(
-                icon: const Icon(Icons.shopping_cart),
-                color: Colors.orange,
-                tooltip: 'Ver seu pedido',
-                onPressed: () {
-                  Navigator.pushNamed(context, 'carrinho');
-                },
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(right: 10),
-              child: IconButton(
-                icon: const Icon(Icons.logout),
-                color: Colors.orange,
-                tooltip: 'Sair',
-                onPressed: () {
-                  Navigator.pushNamedAndRemoveUntil(
-                      context, 'login', (Route<dynamic> route) => false);
-                },
-              ),
-            ),
-          ],
-        ),
-        //Tentativa de unir em uma única classe
-        /* appBar: CustomAppBar(
-          title: dados.nome, // Título dinâmico com o nome do item
-          showCart: true, // O carrinho será exibido
-          showLogout: true, // O botão de logout será exibido
-        ), */
+        appBar: MyComponets().GeraAppBar(dados.nome, 'Ver seu pedido', true, context),
         body: Container(
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(5),

@@ -1,7 +1,8 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
+//import 'package:login/model/customAppBar.dart';
 import 'package:flutter/material.dart';
-import 'package:login/model/customAppBar.dart';
+import 'package:login/view/components/my_componets.dart';
 import '../model/carrinho.dart';
 
 class CarrinhoView extends StatefulWidget {
@@ -23,42 +24,7 @@ class _CarrinhoViewState extends State<CarrinhoView> {
       return MaterialApp(
         debugShowCheckedModeBanner: false,
         home: Scaffold(
-          appBar: AppBar(
-            leading: InkWell(
-              onTap: () {
-                Navigator.pop(context);
-              },
-              child: Icon(
-                Icons.arrow_back_ios,
-                color: Colors.orange,
-              ),
-            ),
-            title: Text(
-              'Seu Pedido',
-              style: TextStyle(fontWeight: FontWeight.bold),
-            ),
-            centerTitle: true,
-            actions: <Widget>[
-              Padding(
-                padding: const EdgeInsets.only(right: 10),
-                child: IconButton(
-                  icon: const Icon(Icons.logout),
-                  color: Colors.orange,
-                  tooltip: 'Sair',
-                  onPressed: () {
-                    Navigator.pushNamedAndRemoveUntil(
-                        context, 'login', (Route<dynamic> route) => false);
-                  },
-                ),
-              ),
-            ],
-          ),
-          //Tentativa de unir em uma única classe
-          /* appBar: CustomAppBar(
-            title: 'Seu Pedido',
-            showCart: false, // Não exibe o botão do carrinho
-            showLogout: true, // O botão de logout será exibido
-          ), */
+          appBar: MyComponets().GeraAppBar('Seu Pedido', '', false, context),
           body: Container(
             decoration: BoxDecoration(
                 gradient: LinearGradient(
@@ -90,39 +56,7 @@ class _CarrinhoViewState extends State<CarrinhoView> {
       return MaterialApp(
         debugShowCheckedModeBanner: false,
         home: Scaffold(
-          appBar: AppBar(
-            leading: InkWell(
-              onTap: () {
-                Navigator.pop(context);
-              },
-              child: Icon(
-                Icons.arrow_back_ios,
-                color: Colors.orange,
-              ),
-            ),
-            title: Text('Seu Pedido'),
-            centerTitle: true,
-            actions: <Widget>[
-              Padding(
-                padding: const EdgeInsets.only(right: 10),
-                child: IconButton(
-                  icon: const Icon(Icons.logout),
-                  color: Colors.orange,
-                  tooltip: 'Sair',
-                  onPressed: () {
-                    Navigator.pushNamedAndRemoveUntil(
-                        context, 'login', (Route<dynamic> route) => false);
-                  },
-                ),
-              ),
-            ],
-          ),
-            
-          /* appBar: CustomAppBar(
-            title: 'Seu Pedido',
-            showCart: false, // Não exibe o botão do carrinho
-            showLogout: true, // O botão de logout será exibido
-          ), */
+          appBar: MyComponets().GeraAppBar('Seu Pedido', '', false, context),
           body: Container(
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(5),
