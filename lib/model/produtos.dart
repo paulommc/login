@@ -240,7 +240,7 @@ class Produtos {
 
     //torta_frango
     lista.add(Produtos("Torta de frango", "Frango, ervilha, requeijão", 30.00,
-        "lib/images/massas/torta_frango", "Massas", 0));
+        "lib/images/massas/torta_frango.png", "Massas", 0));
 
     //===========================================================
     //                         Saladas                          =
@@ -272,7 +272,7 @@ class Produtos {
         "Salada simples",
         "Alface, tomate, cenoura, cebola roxa, ",
         30.00,
-        "lib/images/saladas/salada_simples/",
+        "lib/images/saladas/salada_simples.png",
         "Saladas",
         0));
 
