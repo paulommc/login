@@ -1,6 +1,8 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
+//import 'package:login/model/customAppBar.dart';
 import 'package:flutter/material.dart';
+import 'package:login/view/components/my_componets.dart';
 import '../model/categoria.dart';
 
 class CategoriasView extends StatefulWidget {
@@ -23,94 +25,91 @@ class _CategoriasViewState extends State<CategoriasView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        leading: InkWell(
-          onTap: () {
-            Navigator.pop(context);
-          },
-          child: Icon(
-            Icons.arrow_back_ios,
-            color: Colors.orange,
-          ),
-        ),
-        title: Text(
-          'Selecione a Categoria',
-          style: TextStyle(fontSize: 20),
-        ),
-        centerTitle: true,
-        actions: <Widget>[
-          Padding(
-            padding: const EdgeInsets.only(right: 10),
-            child: IconButton(
-              icon: const Icon(Icons.shopping_cart),
-              color: Colors.orange,
-              tooltip: 'Ver seu pedido',
-              onPressed: () {
-                Navigator.pushNamed(context, 'carrinho');
-              },
+      appBar: MyComponets().GeraAppBar('Selecione a Categoria', 'Ver seu pedido', true, context),
+      body: Container(
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(5),
+            gradient: LinearGradient(
+              colors: [
+                const Color.fromARGB(
+                    255, 255, 227, 212), // Começa com uma cor mais clara
+                const Color.fromARGB(
+                    255, 255, 198, 168), // Termina com uma cor mais escura
+              ],
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+            )),
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: GridView.builder(
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 2, // 2 itens por linha
+              crossAxisSpacing: 10,
+              mainAxisSpacing: 10,
+              childAspectRatio: 3 / 2,
             ),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(right: 10),
-            child: IconButton(
-              icon: const Icon(Icons.logout),
-              color: Colors.orange,
-              tooltip: 'Sair',
-              onPressed: () {
-                Navigator.pushNamedAndRemoveUntil(
-                    context, 'login', (Route<dynamic> route) => false);
-              },
-            ),
-          ),
-        ],
-      ),
-      body: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: GridView.builder(
-          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 2, // 2 por linha
-            crossAxisSpacing: 10,
-            mainAxisSpacing: 10,
-            childAspectRatio: 3 / 2,
-          ),
-          itemCount: lista.length,
-          itemBuilder: (context, index) {
-            return Card(
-              elevation: 4,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(10),
-              ),
-
-              child: InkWell(
-                onTap: () {
-                  //retornar o item da lista selecionado
-                  var dados = lista[index].catNome;
-                  //navegar para a tela DetalhesView
-                  Navigator.pushNamed(context, 'cardapio', arguments: dados);
-                },
-                
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Image.asset(
-                      lista[index].catImagem,
-                      width: 50,
-                      height: 50,
-                    ),
-                    SizedBox(height: 10),
-                    Text(
-                      lista[index].catNome,
-                      style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.bold,
-                      ),
-                      textAlign: TextAlign.center,
-                    ),
-                  ],
+            itemCount: lista.length,
+            itemBuilder: (context, index) {
+              return Card(
+                elevation: 4,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10),
                 ),
-              ),
-            );
-          },
+                child: InkWell(
+                  onTap: () {
+                    // Retorna o item da lista selecionado
+                    var dados = lista[index].catNome;
+                    // Navegar para a tela DetalhesView
+                    Navigator.pushNamed(context, 'cardapio', arguments: dados);
+                  },
+                  child: Stack(
+                    children: [
+                      // Imagem ocupando o botão inteiro
+                      ClipRRect(
+                        borderRadius: BorderRadius.circular(10),
+                        child: Image.asset(
+                          lista[index].catImagem,
+                          width: double.infinity,
+                          height: double.infinity,
+                          fit: BoxFit
+                              .cover, // Para a imagem ocupar todo o espaço
+                        ),
+                      ),
+                      // Texto sobreposto na parte inferior
+                      Positioned(
+                        bottom: 0,
+                        left: 0,
+                        right: 0,
+                        child: Container(
+                          decoration: BoxDecoration(
+                            gradient: LinearGradient(
+                              colors: [
+                                const Color.fromARGB(10, 0, 0, 0),
+                                const Color.fromARGB(255, 0, 0, 0)
+                              ],
+                              begin: Alignment.topCenter,
+                              end: Alignment.bottomCenter,
+                            ),
+                          ),
+                          padding:
+                              EdgeInsets.symmetric(vertical: 8, horizontal: 10),
+                          child: Text(
+                            lista[index].catNome,
+                            style: TextStyle(
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white,
+                            ),
+                            textAlign: TextAlign.center,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              );
+            },
+          ),
         ),
       ),
     );
