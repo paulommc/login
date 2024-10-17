@@ -11,3 +11,6 @@ recuperação de senha (no momento as telas não possuiem essas funcionalidades)
 Feito por:
 Murilo Berti, RA: 284 048 231 104 1;
 Paulo Castro 
+
+Vídeo demo:
+https://youtu.be/64aqk_jUfWI
