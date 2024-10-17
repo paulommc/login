@@ -1,11 +1,9 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
-//import 'package:login/model/customAppBar.dart';
 import 'package:flutter/material.dart';
 import 'package:login/model/carrinho.dart';
 import 'package:login/view/components/my_componets.dart';
 import '../model/produtos.dart';
-//import '../model/carrinho.dart';
 
 class DetalhesView extends StatefulWidget {
   const DetalhesView({super.key});
@@ -54,16 +52,6 @@ class _DetalhesViewState extends State<DetalhesView> {
                   ),
                 ),
 
-                // ListTile(
-                //   title: Text(
-                //     'Produto:',
-                //     style: TextStyle(fontSize: 12),
-                //   ),
-                //   subtitle: Text(
-                //     dados.nome,
-                //     style: TextStyle(fontSize: 22),
-                //   ),
-                // ),
                 SizedBox(height: 50),
                 ListTile(
                   title: Text(
@@ -91,16 +79,6 @@ class _DetalhesViewState extends State<DetalhesView> {
                     textAlign: TextAlign.right,
                   ),
                 ),
-                // ListTile(
-                //   title: Text(
-                //     'Cidade',
-                //     style: TextStyle(fontSize: 12),
-                //   ),
-                //   subtitle: Text(
-                //     dados.cidade,
-                //     style: TextStyle(fontSize: 22),
-                //   ),
-                // ),
                 // Botão "Entrar"
                 SizedBox(height: 25),
                 ElevatedButton(

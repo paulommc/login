@@ -1,6 +1,5 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
-//import 'package:login/model/customAppBar.dart';
 import 'package:flutter/material.dart';
 import 'package:login/view/components/my_componets.dart';
 import '../model/carrinho.dart';
@@ -57,6 +56,7 @@ class _CarrinhoViewState extends State<CarrinhoView> {
         debugShowCheckedModeBanner: false,
         home: Scaffold(
           appBar: MyComponets().GeraAppBar('Seu Pedido', '', false, context),
+          
           body: Container(
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(5),

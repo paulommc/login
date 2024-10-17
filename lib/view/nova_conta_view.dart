@@ -1,7 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'dart:async';
-
 import 'package:flutter/material.dart';
 
 class NovaContaView extends StatefulWidget {
@@ -40,7 +39,6 @@ class _NovaContaViewState extends State<NovaContaView> {
           child: Form(
             key: formkey,
             child: Column(
-              // mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
                   'NOVA CONTA',
@@ -51,7 +49,6 @@ class _NovaContaViewState extends State<NovaContaView> {
                 TextFormField(
                   controller: nome,
                   validator: (value) {
-                    //String valor = value.toString();
                     if (value == null) {
                       return 'Insira um nome válido';
                     }

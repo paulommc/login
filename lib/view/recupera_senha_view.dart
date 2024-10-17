@@ -35,13 +35,13 @@ class _RecuperaSenhaViewState extends State<RecuperaSenhaView> {
           child: Form(
             key: formkey,
             child: Column(
-              // mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
                   'Redefinir Senha',
                   style: TextStyle(fontSize: 30, fontWeight: FontWeight.w900),
                 ),
                 SizedBox(height: 200),
+                
                 // email
                 TextFormField(
                   controller: email,

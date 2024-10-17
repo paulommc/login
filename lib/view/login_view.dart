@@ -42,6 +42,7 @@ class _LoginViewState extends State<LoginView> {
               children: [
                 // Imagem
                 Image.asset('../lib/images/login_remove.png'),
+                
                 // Campo de email
                 TextFormField(
                   controller: email,
