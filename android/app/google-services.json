@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "459470333901",
+    "project_id": "fatec-p2-mobile",
+    "storage_bucket": "fatec-p2-mobile.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:459470333901:android:ef5f68ea202a0e944e8684",
+        "android_client_info": {
+          "package_name": "fatecp2mobile.app.com"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAglMLqdhzkUUjrObGwfJ-xU5-RLbs0MaQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
