@@ -4,20 +4,8 @@ import 'package:firebase_core/firebase_core.dart' show Firebase, FirebaseOptions
 import 'package:flutter/foundation.dart'show defaultTargetPlatform, kIsWeb, TargetPlatform;
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:login/main.dart';
 
-Future<void> main() async {
-  await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
-  );
-  runApp(
-    MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Firebase Test',
-      home: MainApp(),
-    )
-  );
-}
+
 
 
 /// Default [FirebaseOptions] for use with your Firebase apps.

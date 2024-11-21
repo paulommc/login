@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 import 'dart:async';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class RecuperaSenhaView extends StatefulWidget {
@@ -12,7 +13,7 @@ class RecuperaSenhaView extends StatefulWidget {
 class _RecuperaSenhaViewState extends State<RecuperaSenhaView> {
   final GlobalKey<FormState> formkey = GlobalKey<FormState>();
   final msgKey = GlobalKey<ScaffoldMessengerState>();
-  var email = TextEditingController();
+  var txtEmail = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -44,15 +45,13 @@ class _RecuperaSenhaViewState extends State<RecuperaSenhaView> {
                 
                 // email
                 TextFormField(
-                  controller: email,
+                  controller: txtEmail,
                   validator: (value) {
                     String valor = value.toString();
-                    if (value == null) {
-                      return 'Insira um Email Válido';
-                    } else if (!valor.contains('@')) {
-                      return 'Insira um Email Válido';
-                    } else if (!valor.contains('.')) {
-                      return 'Insira um Email Válido';
+                    if (valor == null ||
+                        !valor.contains('.') ||
+                        !valor.contains('@')) {
+                      return 'Insira um email válido';
                     }
                     return null;
                   },
@@ -72,8 +71,8 @@ class _RecuperaSenhaViewState extends State<RecuperaSenhaView> {
                     if (formkey.currentState!.validate()) {
                       // Recuperar os dados digitados
                       setState(() {
-                        String vemail = email.text;
-
+                        String vemail = txtEmail.text;
+                        FirebaseAuth.instance.sendPasswordResetEmail(email: vemail);
                         //Exebir o resultado
 
                         msgKey.currentState!.showSnackBar(
@@ -83,10 +82,8 @@ class _RecuperaSenhaViewState extends State<RecuperaSenhaView> {
                           ),
                         );
                       });
-                      Timer(Duration(seconds: 4), () {
-                        Navigator.pop(context);
-                      });
                     }
+                    Navigator.pop(context);
                   },
                   child: Padding(
                     padding: const EdgeInsets.symmetric(

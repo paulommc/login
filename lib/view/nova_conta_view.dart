@@ -1,7 +1,11 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, use_build_context_synchronously
 
 import 'dart:async';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:login/view/components/mensagem.dart';
 
 class NovaContaView extends StatefulWidget {
   const NovaContaView({super.key});
@@ -69,11 +73,9 @@ class _NovaContaViewState extends State<NovaContaView> {
                   controller: email,
                   validator: (value) {
                     String valor = value.toString();
-                    if (value == null) {
-                      return 'Insira um Email Válido';
-                    } else if (!valor.contains('@')) {
-                      return 'Insira um Email Válido';
-                    } else if (!valor.contains('.')) {
+                    if (value == null ||
+                        !valor.contains('@') ||
+                        !valor.contains('.')) {
                       return 'Insira um Email Válido';
                     }
                     return null;
@@ -88,9 +90,7 @@ class _NovaContaViewState extends State<NovaContaView> {
                 //senha
                 TextFormField(
                   validator: (value) {
-                    if (value == null) {
-                      return 'Sua senha deve conter ao menos 8 caractéres';
-                    } else if (value.length < 8) {
+                    if (value == null || value.length < 8) {
                       return 'Sua senha deve conter ao menos 8 caractéres';
                     }
                     return null;
@@ -107,9 +107,7 @@ class _NovaContaViewState extends State<NovaContaView> {
                 // confirme a senha
                 TextFormField(
                   validator: (value) {
-                    if (value == null) {
-                      return 'Sua senha deve conter ao menos 8 caractéres';
-                    } else if (value.length < 8) {
+                    if (value == null || value.length < 8) {
                       return 'Sua senha deve conter ao menos 8 caractéres';
                     }
                     return null;
@@ -124,7 +122,7 @@ class _NovaContaViewState extends State<NovaContaView> {
 
                 SizedBox(height: 50),
 
-                // btn CRiar Conta
+                // btn Criar Conta
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.orange,
@@ -138,13 +136,44 @@ class _NovaContaViewState extends State<NovaContaView> {
                         String s2 = senha2.text;
                         //Exebir o resultado
                         if (s1 == s2) {
-                          msgKey.currentState!.showSnackBar(
-                            SnackBar(
-                              content:
-                                  Text('Conta $vemail criada com sucesso!'),
-                              duration: Duration(seconds: 3),
-                            ),
-                          );
+                          FirebaseAuth.instance
+                              .createUserWithEmailAndPassword(
+                                  email: vemail, password: s2)
+                              .then((resultado) {
+                            //
+                            //Armazenar o nome do usuario no firestore
+                            //
+                            FirebaseFirestore.instance
+                              .collection('usuarios')
+                              .add(
+                              {
+                                'uid': resultado.user!.uid,
+                                'nome': nome,
+                              },
+                            );
+
+                            msgKey.currentState!.showSnackBar(
+                              SnackBar(
+                                content:
+                                    Text('Conta $vemail criada com sucesso!'),
+                                duration: Duration(seconds: 3),
+                              ),
+                            );
+                            //sucesso(context, 'Usuário criado com sucesso!');
+                            Navigator.pop(context);
+                          }).catchError((e) {
+                            switch (e.code) {
+                              case 'email-already-in-use':
+                                erro(context, 'O email já foi cadastrado.');
+                                break;
+                              case 'invalid-email':
+                                erro(context, 'O formato do email é inválido.');
+                                break;
+                              default:
+                                erro(context, 'ERRO: ${e.code.toString()}');
+                            }
+                          });
+
                           Timer(Duration(seconds: 4), () {
                             //Navigator.pop(context);
                             Navigator.pushNamedAndRemoveUntil(context, 'login',
