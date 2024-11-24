@@ -1,3 +1,7 @@
+// ignore_for_file: empty_constructor_bodies
+
+import 'package:flutter/foundation.dart';
+
 class Categoria {
   //atributos
   final String catNome;
@@ -5,6 +9,22 @@ class Categoria {
 
   Categoria(this.catNome, this.catImagem);
 
+  //Modelo novo
+  Map<String, dynamic> toJson(){
+    return <String, dynamic>{
+      'nome' : catNome,
+      'imagem' : catImagem,
+    };
+  }
+
+  factory Categoria.fromJson(Map<String, dynamic> json){
+    return Categoria(
+      json['nome'],
+      json['imagem'],
+    );
+  }
+
+  //Modelo antigo
   static List<Categoria> gerarCategoria() {
     List<Categoria> lista = [];
 

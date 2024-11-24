@@ -1,6 +1,8 @@
 // ignore_for_file: prefer_const_constructors
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:login/controller/login_controller.dart';
+import 'package:login/view/components/text_field.dart';
 
 class RecuperaSenhaView extends StatefulWidget {
   const RecuperaSenhaView({super.key});
@@ -12,7 +14,7 @@ class RecuperaSenhaView extends StatefulWidget {
 class _RecuperaSenhaViewState extends State<RecuperaSenhaView> {
   final GlobalKey<FormState> formkey = GlobalKey<FormState>();
   final msgKey = GlobalKey<ScaffoldMessengerState>();
-  var email = TextEditingController();
+  var txtEmailEsqueceuSenha = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -43,24 +45,7 @@ class _RecuperaSenhaViewState extends State<RecuperaSenhaView> {
                 SizedBox(height: 200),
                 
                 // email
-                TextFormField(
-                  controller: email,
-                  validator: (value) {
-                    String valor = value.toString();
-                    if (value == null) {
-                      return 'Insira um Email Válido';
-                    } else if (!valor.contains('@')) {
-                      return 'Insira um Email Válido';
-                    } else if (!valor.contains('.')) {
-                      return 'Insira um Email Válido';
-                    }
-                    return null;
-                  },
-                  decoration: InputDecoration(
-                    labelText: 'Email',
-                    border: OutlineInputBorder(),
-                  ),
-                ),
+                campoTexto('Email', txtEmailEsqueceuSenha, Icons.email),
                 SizedBox(height: 70),
 
                 // btn redefinir
@@ -69,30 +54,16 @@ class _RecuperaSenhaViewState extends State<RecuperaSenhaView> {
                     backgroundColor: Colors.orange,
                   ),
                   onPressed: () {
-                    if (formkey.currentState!.validate()) {
-                      // Recuperar os dados digitados
-                      setState(() {
-                        String vemail = email.text;
-
-                        //Exebir o resultado
-
-                        msgKey.currentState!.showSnackBar(
-                          SnackBar(
-                            content: Text('Email enviado para $vemail'),
-                            duration: Duration(seconds: 3),
-                          ),
-                        );
-                      });
-                      Timer(Duration(seconds: 4), () {
-                        Navigator.pop(context);
-                      });
-                    }
+                    LoginController().esqueceuSenha(
+                      context, 
+                      txtEmailEsqueceuSenha.text
+                    );
                   },
                   child: Padding(
                     padding: const EdgeInsets.symmetric(
                         vertical: 15.0, horizontal: 60.0),
                     child: Text(
-                      'Redefinir',
+                      'Enviar código',
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 18,
