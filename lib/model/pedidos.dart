@@ -3,7 +3,7 @@
 
 import 'package:login/model/produtos.dart';
 
-class Pedido{
+class Pedido {
   final String uid;
   final String descricao;
   final bool status;
@@ -31,5 +31,4 @@ class Pedido{
       json['itens'],
     );
   }
-
 }

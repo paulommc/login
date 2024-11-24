@@ -1,1 +1,21 @@
-{"flutter":{"platforms":{"android":{"default":{"projectId":"fatec-p2-mobile","appId":"1:459470333901:android:ef5f68ea202a0e944e8684","fileOutput":"android/app/google-services.json"}},"dart":{"lib/firebase_options.dart":{"projectId":"fatec-p2-mobile","configurations":{"android":"1:459470333901:android:ef5f68ea202a0e944e8684","ios":"1:459470333901:ios:13c3b7fcc6a0f8bf4e8684","web":"1:459470333901:web:7dec4c8346e7b5064e8684"}}}}}}
+{"flutter": {
+    "platforms": {
+        "android": {
+            "default": {
+                "projectId":"fatec-p2-mobile",
+                "appId":"1:459470333901:android:ef5f68ea202a0e944e8684",
+                "fileOutput":"android/app/google-services.json"
+            }
+        },
+        "dart": {
+            "lib/firebase_options.dart": {
+                "projectId":"fatec-p2-mobile",
+                "configurations": {
+                    "android":"1:459470333901:android:ef5f68ea202a0e944e8684",
+                    "ios":"1:459470333901:ios:13c3b7fcc6a0f8bf4e8684",
+                    "web":"1:459470333901:web:7dec4c8346e7b5064e8684"
+                }
+            }
+        }
+    }
+}}

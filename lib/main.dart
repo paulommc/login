@@ -1,9 +1,12 @@
 // ignore_for_file: prefer_const_constructors
 
+//Firebase
 import 'package:firebase_core/firebase_core.dart';
+import 'package:login/firebase_options.dart';
+//Flutter
 import 'package:flutter/material.dart';
 import 'package:device_preview/device_preview.dart';
-import 'package:login/firebase_options.dart';
+//Proprio
 import 'package:login/view/cardapio_view.dart';
 import 'package:login/view/carrinho_view.dart';
 import 'package:login/view/categorias_view.dart';
@@ -18,7 +21,7 @@ Future<void> main() async {
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform,);
   runApp(
     DevicePreview(
-      enabled: false,
+      enabled: true,
       builder: (context) => MainApp(),
     ),
   );
@@ -30,6 +33,7 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      title: 'App',
       debugShowCheckedModeBanner: false,
       initialRoute: 'login',
       routes: {

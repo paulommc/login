@@ -1,6 +1,8 @@
 // ignore_for_file: prefer_const_constructors
 
+//Flutter
 import 'package:flutter/material.dart';
+//Proprio
 import 'package:login/controller/login_controller.dart';
 import 'package:login/view/components/text_field.dart';
 
@@ -17,7 +19,7 @@ class _LoginViewState extends State<LoginView> {
 
   @override
   void initState() {
-   /*  txtEmail.text = 'flutter@gmail.com';
+    /*  txtEmail.text = 'flutter@gmail.com';
     txtSenha.text = '12345678'; */
     super.initState();
   }
@@ -40,7 +42,6 @@ class _LoginViewState extends State<LoginView> {
               children: [
                 // Imagem
                 Image.asset('../lib/images/login_remove.png'),
-                
 
                 // Campo de email
                 campoTexto('Email', txtEmail, Icons.email),
@@ -73,6 +74,7 @@ class _LoginViewState extends State<LoginView> {
                   ),
                   onPressed: () {
                     //Login
+                    To travado aqui e no cadastrat cliente a msg n aprece
                     LoginController().login(
                       context,
                       txtEmail.text,
@@ -81,7 +83,7 @@ class _LoginViewState extends State<LoginView> {
                   },
                   child: Padding(
                     padding: const EdgeInsets.symmetric(
-                      vertical: 15.0, horizontal: 60.0),
+                        vertical: 15.0, horizontal: 60.0),
                     child: Text(
                       'Entrar',
                       style: TextStyle(

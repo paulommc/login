@@ -1,7 +1,9 @@
 // ignore_for_file: prefer_const_constructors
 
-import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:login/controller/login_controller.dart';
+import 'package:login/view/components/mensagem.dart';
+import 'package:login/view/components/text_field.dart';
 
 class NovaContaView extends StatefulWidget {
   const NovaContaView({super.key});
@@ -13,10 +15,16 @@ class NovaContaView extends StatefulWidget {
 class _NovaContaViewState extends State<NovaContaView> {
   final GlobalKey<FormState> formkey = GlobalKey<FormState>();
   final msgKey = GlobalKey<ScaffoldMessengerState>();
-  var nome = TextEditingController();
-  var email = TextEditingController();
-  var senha = TextEditingController();
-  var senha2 = TextEditingController();
+  var txtNome = TextEditingController();
+  var txtEmail = TextEditingController();
+  var txtSenha = TextEditingController();
+  var txtConfirmarSenha = TextEditingController();
+
+  @override
+  void initState() {
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -46,75 +54,25 @@ class _NovaContaViewState extends State<NovaContaView> {
                 ),
                 SizedBox(height: 150),
                 // nome
-                TextFormField(
-                  controller: nome,
-                  validator: (value) {
-                    if (value == null) {
-                      return 'Insira um nome válido';
-                    }
-                    if (value.length < 3) {
-                      return 'Insira um nome válido com ao menos 3 caracteres';
-                    }
-                    return null;
-                  },
-                  decoration: InputDecoration(
-                    labelText: 'Nome',
-                    border: OutlineInputBorder(),
-                  ),
-                ),
+                campoTexto('Nome', txtNome, Icons.person),
                 SizedBox(height: 20),
 
                 // email
-                TextFormField(
-                  controller: email,
-                  validator: (value) {
-                    String valor = value.toString();
-                    if (value == null) {
-                      return 'Insira um Email Válido';
-                    } else if (!valor.contains('@')) {
-                      return 'Insira um Email Válido';
-                    } else if (!valor.contains('.')) {
-                      return 'Insira um Email Válido';
-                    }
-                    return null;
-                  },
-                  decoration: InputDecoration(
-                    labelText: 'Email',
-                    border: OutlineInputBorder(),
-                  ),
-                ),
+                campoTexto('Email', txtEmail, Icons.email),
                 SizedBox(height: 20),
 
                 //senha
-                TextFormField(
-                  validator: (value) {
-                    if (value == null) {
-                      return 'Sua senha deve conter ao menos 8 caractéres';
-                    } else if (value.length < 8) {
-                      return 'Sua senha deve conter ao menos 8 caractéres';
-                    }
-                    return null;
-                  },
-                  controller: senha,
-                  decoration: InputDecoration(
-                    labelText: 'Senha',
-                    border: OutlineInputBorder(),
-                  ),
-                  obscureText: true,
-                ),
-
+                campoTexto('Senha', txtSenha, Icons.password, senha: true),
                 SizedBox(height: 20),
                 // confirme a senha
                 TextFormField(
                   validator: (value) {
-                    if (value == null) {
-                      return 'Sua senha deve conter ao menos 8 caractéres';
-                    } else if (value.length < 8) {
+                    if (value == null || value.length < 8) {
                       return 'Sua senha deve conter ao menos 8 caractéres';
                     }
                     return null;
                   },
-                  controller: senha2,
+                  controller: txtConfirmarSenha,
                   decoration: InputDecoration(
                     labelText: 'Confirme a Senha',
                     border: OutlineInputBorder(),
@@ -130,26 +88,20 @@ class _NovaContaViewState extends State<NovaContaView> {
                     backgroundColor: Colors.orange,
                   ),
                   onPressed: () {
-                    if (formkey.currentState!.validate()) {
+                    //if (formkey.currentState!.validate()) {
                       // Recuperar os dados digitados
-                      setState(() {
-                        String vemail = email.text;
-                        String s1 = senha.text;
-                        String s2 = senha2.text;
+                        String s1 = txtSenha.text;
+                        String s2 = txtConfirmarSenha.text;
                         //Exebir o resultado
                         if (s1 == s2) {
-                          msgKey.currentState!.showSnackBar(
-                            SnackBar(
-                              content:
-                                  Text('Conta $vemail criada com sucesso!'),
-                              duration: Duration(seconds: 3),
-                            ),
-                          );
-                          Timer(Duration(seconds: 4), () {
+                          LoginController().criarConta(context, txtNome.text,
+                              txtEmail.text, txtSenha.text);
+                              sucesso(context, 'Usuario criado com sucesso');
+/*                           Timer(Duration(seconds: 4), () {
                             //Navigator.pop(context);
                             Navigator.pushNamedAndRemoveUntil(context, 'login',
                                 (Route<dynamic> route) => false);
-                          });
+                          }); */
                         } else {
                           msgKey.currentState!.showSnackBar(
                             SnackBar(
@@ -158,8 +110,8 @@ class _NovaContaViewState extends State<NovaContaView> {
                             ),
                           );
                         }
-                      });
-                    }
+                      
+                    //}
                   },
                   child: Padding(
                     padding: const EdgeInsets.symmetric(
