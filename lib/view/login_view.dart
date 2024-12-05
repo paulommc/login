@@ -31,9 +31,7 @@ class _LoginViewState extends State<LoginView> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
+    return Scaffold(
         body: Padding(
           padding: const EdgeInsets.all(16.0),
           child: Form(
@@ -67,14 +65,14 @@ class _LoginViewState extends State<LoginView> {
                 ),
                 SizedBox(height: 20),
 
-                // Botão "Entrar"
+                //Botão "Entrar"
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.orange,
                   ),
                   onPressed: () {
                     //Login
-                    To travado aqui e no cadastrat cliente a msg n aprece
+                    //To travado aqui e no cadastrar cliente a msg n aprece. Lembrar também de fazer as conexoes com o BD.
                     LoginController().login(
                       context,
                       txtEmail.text,
@@ -110,7 +108,6 @@ class _LoginViewState extends State<LoginView> {
             ),
           ),
         ),
-      ),
     );
   }
 }

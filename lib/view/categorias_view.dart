@@ -16,7 +16,7 @@ class _CategoriasViewState extends State<CategoriasView> {
 
   @override
   void initState() {
-    lista = Categoria.gerarCategoria();
+    // lista = Categoria.gerarCategoria();
     super.initState();
   }
 

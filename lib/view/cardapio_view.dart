@@ -17,7 +17,7 @@ class _CardapioViewState extends State<CardapioView> {
   String categoria = "";
   @override
   void initState() {
-    lista = Produtos.gerarProdutos();
+    // lista = Produtos.gerarProdutos();
     super.initState();
   }
 

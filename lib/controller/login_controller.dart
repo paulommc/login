@@ -27,17 +27,17 @@ class LoginController {
 
       sucesso(context, 'Usuário criado com sucesso!');
       Navigator.pop(context);
-    }).catchError((e) {
-      switch (e.code) {
-        case 'email-already-in-use':
-          erro(context, 'O email já foi cadastrado.');
-          break;
-        case 'invalid-email':
-          erro(context, 'O formato do email é inválido.');
-          break;
-        default:
-          erro(context, 'ERRO: ${e.code.toString()}');
-      }
+    }).catchError((error) {
+      // switch (e.code) {
+      //   case 'email-already-in-use':
+      //     erro(context, 'O email já foi cadastrado.');
+      //     break;
+      //   case 'invalid-email':
+      //     erro(context, 'O formato do email é inválido.');
+      //     break;
+      //   default:
+      erro(context, 'ERRO: ${error.toString()}');
+      // }
     });
   }
 
@@ -50,18 +50,19 @@ class LoginController {
     auth
         .signInWithEmailAndPassword(email: email, password: senha)
         .then((resultado) {
-      sucesso(context, 'Usuário autenticado com sucesso!');
+      //sucesso(context, 'Usuário autenticado com sucesso!');
       Navigator.pushNamed(context, 'categorias');
     }).catchError((e) {
-      switch (e.code) {
-        case 'invalid-email':
-          erro(context, 'O formato do email é inválido');
-          break;
-        default:
-          erro(context, 'ERRO: ${e.code.toString()}');
-      }
+      // switch (e.code) {
+      //   case 'invalid-email':
+      //     erro(context, 'O formato do email é inválido');
+      //     break;
+      //   default:
+      //     // erro(context, 'ERRO: ${e.code.toString()}');
+      // }
     });
   }
+  // arrumar os MaterialApp e passar pro as coisas pro BD. Passar os sucesso e erro manualmente. Pq cada MaterialApp pega um contexto diferente.
 
   //
   // ESQUECEU A SENHA
@@ -97,12 +98,12 @@ class LoginController {
   //
   Future<String> usuarioLogado() async {
     var nome = '';
-    await FirebaseFirestore.instance //
-        .collection('usuarios') //
-        .where('uid', isEqualTo: idUsuario()) //
-        .get() //
+    await FirebaseFirestore.instance
+        .collection('usuarios')
+        .where('uid', isEqualTo: idUsuario())
+        .get()
         .then((resultado) {
-      nome = resultado.docs[0].data()['nome'] ?? ''; //
+      nome = resultado.docs[0].data()['nome'] ?? '';
     });
     return nome;
   }
