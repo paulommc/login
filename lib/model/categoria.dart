@@ -1,7 +1,5 @@
 // ignore_for_file: empty_constructor_bodies
 
-import 'package:flutter/foundation.dart';
-
 class Categoria {
   //atributos
   final String catNome;

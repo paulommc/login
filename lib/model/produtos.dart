@@ -1,3 +1,4 @@
+//ItensCardapio
 class Produtos {
   //atributos
   final String nome;
@@ -6,20 +7,21 @@ class Produtos {
   final String imagem;
   final bool ativo;
   final String categoria;
-  final int quantidade;
+  
 
-  Produtos(this.nome, this.descricao, this.valor, this.imagem, this.ativo, this.categoria,
-      this.quantidade);
+  Produtos(
+    this.nome, this.descricao, this.valor,
+    this.imagem, this.ativo,this.categoria
+  );
 
   Map<String, dynamic> toJson() {
     return <String, dynamic>{
-      'nome' : nome,
+      'nome'     : nome,
       'descricao': descricao,
-      'valor' : valor,
-      'imagem' : imagem,
-      'status' : ativo,
-      'quantidade' : quantidade,
-      'categoria' : categoria,
+      'valor'    : valor,
+      'imagem'   : imagem,
+      'status'   : ativo,
+      'categoria': categoria,
     };
   }
 
@@ -31,7 +33,6 @@ class Produtos {
       json['imagem'],
       json['ativo'],
       json['categoria'],
-      json['quantidade'],
     );
   }
 
@@ -43,7 +44,6 @@ class Produtos {
   //   //===========================================================
 
   //   //4 Queijos
-
   //   lista.add(Produtos(
   //     "4 Queijos", "Gorgonzola, parmesão, mussarela", 40.00,
   //     "lib/images/pizzas/4queijos.png", "Tradicionais", 0));
@@ -171,7 +171,7 @@ class Produtos {
 
   //   //Churros de doce de leite
   //   lista.add(Produtos(
-  //     "Churros de doce de leite", "Churros de doce de leite", 30.00, 
+  //     "Churros de doce de leite", "Churros de doce de leite", 30.00,
   //     "lib/images/sobremesas/churros_leite.png", "Sobremesas", 0));
 
   //   //Petit Gateau
@@ -281,7 +281,7 @@ class Produtos {
 
   //   //Nome do produto
   //   lista.add(Produtos(
-  //     "Casquinha em dobro", "Pague uma casquinha, leve duas", 5.50, 
+  //     "Casquinha em dobro", "Pague uma casquinha, leve duas", 5.50,
   //     "lib/images/promocoes/casquinha_dobro.png", "Promoções", 0));
 
   //   //Nome do produto

@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:login/view/components/my_componets.dart';
+import 'package:login/controller/categoria_controller.dart';
 import '../model/categoria.dart';
 
 class CategoriasView extends StatefulWidget {
@@ -22,7 +23,34 @@ class _CategoriasViewState extends State<CategoriasView> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return StreamBuilder(
+      stream: CategoriaController().listarItens('1'),
+      builder: (context, AsyncSnapshot<QuerySnapshot> snapshot) {
+        if (snapshot.connectionState == ConnectionState.waiting) {
+          return CircularProgressIndicator();
+        }
+
+        if (!snapshot.hasData || snapshot.data!.docs.isEmpty) {
+          return Text('Nenhum item encontrado.');
+        }
+
+        return ListView(
+          children: snapshot.data!.docs.map((doc) {
+            final item = doc.data() as Map<String, dynamic>;
+            return ListTile(
+              title: Text(item['nome']),
+              subtitle: Text(item['descricao']),
+              trailing: Text('R\$ ${item['preco'].toStringAsFixed(2)}'),
+              onTap: () {
+                // Lógica para abrir detalhes do item ou adicionar ao pedido
+              },
+            );
+          }).toList(),
+        );
+      },
+    );
+
+    /* return Scaffold(
       appBar: MyComponets().GeraAppBar('Selecione a Categoria', 'Ver seu pedido', true, context),
       body: Container(
         decoration: BoxDecoration(
@@ -69,8 +97,7 @@ class _CategoriasViewState extends State<CategoriasView> {
                           lista[index].catImagem,
                           width: double.infinity,
                           height: double.infinity,
-                          fit: BoxFit
-                              .cover, // Para a imagem ocupar todo o espaço
+                          fit: BoxFit.cover, // Para a imagem ocupar todo o espaço
                         ),
                       ),
                       // Texto sobreposto na parte inferior
@@ -110,6 +137,6 @@ class _CategoriasViewState extends State<CategoriasView> {
           ),
         ),
       ),
-    );
+    ); */
   }
 }
