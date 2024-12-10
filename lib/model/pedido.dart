@@ -1,17 +1,20 @@
 //import 'categoria.dart';
 // ignore_for_file: non_constant_identifier_names
 
-import 'package:login/model/produtos.dart';
+//import 'package:login/model/produtos.dart';
 
 //Pedido
 class Pedido {
   final String uid;
   final bool status;
   final DateTime data_hora;
-  List<ItemPedido>itens;
+  List<ItemPedido> itens;
 
-
-  Pedido({required this.uid, required this.status, required this.data_hora, required this.itens});
+  Pedido(
+      {required this.uid,
+      required this.status,
+      required this.data_hora,
+      required this.itens});
 
   factory Pedido.fromMap(Map<String, dynamic> map) {
     return Pedido(
@@ -34,7 +37,6 @@ class Pedido {
   }
 
   static fromJson(Map<String, dynamic> data) {}
-
 }
 
 class ItemPedido {
@@ -45,7 +47,13 @@ class ItemPedido {
   int quantidade;
   String status;
 
-  ItemPedido({required this.item_id, required this.nome, required this.imagem, required this.valor, required this.quantidade, required this.status,
+  ItemPedido({
+    required this.item_id,
+    required this.nome,
+    required this.imagem,
+    required this.valor,
+    required this.quantidade,
+    required this.status,
   });
 
   factory ItemPedido.fromMap(Map<String, dynamic> map) {

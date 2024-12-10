@@ -17,8 +17,8 @@ class _DetalhesViewState extends State<DetalhesView> {
   @override
   Widget build(BuildContext context) {
     //receber os dados que foram passados por argumento
-    final Produtos dados =
-        ModalRoute.of(context)!.settings.arguments as Produtos;
+    final Produto dados =
+        ModalRoute.of(context)!.settings.arguments as Produto;
 
     return MaterialApp(
       debugShowCheckedModeBanner: false,
@@ -92,7 +92,6 @@ class _DetalhesViewState extends State<DetalhesView> {
                         duration: Duration(seconds: 3),
                       ),
                     );
-                    //var itensCarrinho = Carrinho();
                     int posicao = Carrinho()
                         .itens
                         .indexWhere((item) => item['nome'] == dados.nome);

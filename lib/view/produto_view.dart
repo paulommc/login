@@ -16,9 +16,10 @@ class ProdutosPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text('Itens da Categoria')),
-      body: StreamBuilder<List<Produtos>>(
+      body: StreamBuilder<List<Produto>>(
         stream: ProdutosController().listarItensPorCategoria(categoriaId),
         builder: (context, snapshot) {
+
           if (snapshot.connectionState == ConnectionState.waiting) {
             return Center(child: CircularProgressIndicator());
           }
@@ -38,10 +39,10 @@ class ProdutosPage extends StatelessWidget {
                 subtitle: Text('R\$ ${item.valor.toStringAsFixed(2)}'),
                 onTap: () {
                   // Lógica para adicionar ao carrinho ou visualizar detalhes
-                  void adicionarAoCarrinho(Produtos produto, int quantidade) {
+                  void adicionarAoCarrinho(Produto produto, int quantidade) {
                     final carrinho = Carrinho();
                     carrinho.itens.add({
-                      'produto': produto.toJson(),
+                      'produto': produto.nome,
                       'quantidade': quantidade,
                     });
                     sucesso(context, 'Item adicionado ao carrinho: ${produto.nome}');

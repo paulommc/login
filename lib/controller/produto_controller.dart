@@ -6,14 +6,14 @@ import '../model/produtos.dart';
 class ProdutosController {
   final FirebaseFirestore db = FirebaseFirestore.instance;
 
-  Stream<List<Produtos>> listarItensPorCategoria(String categoriaId) {
+  Stream<List<Produto>> listarItensPorCategoria(String categoriaId) {
     return db
         .collection('itens_cardapio')
         .where('categoria', isEqualTo: categoriaId)
         .snapshots()
         .map((snapshot) {
           return snapshot.docs
-              .map((doc) => Produtos.fromJson(doc.data() as Map<String, dynamic>))
+              .map((doc) => Produto.fromJson(doc.data() as Map<String, dynamic>))
               .toList();
         });
   }

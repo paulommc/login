@@ -3,8 +3,7 @@
 import 'package:flutter/material.dart';
 
 class MyComponets {
-  AppBar GeraAppBar(
-      String titulo, String tooltip, bool carrinho, BuildContext context) {
+  AppBar GeraAppBar( String titulo, String tooltip, bool carrinho, BuildContext context) {
     return AppBar(
       leading: InkWell(
         onTap: () {
