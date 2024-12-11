@@ -1,7 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, use_key_in_widget_constructors, library_private_types_in_public_api
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:login/controller/categoria_controller.dart';
+import 'package:login/view/components/my_componets.dart';
 import '../model/categoria.dart';
 
 class CategoriasView extends StatefulWidget {
@@ -15,188 +15,124 @@ class _CategoriasViewState extends State<CategoriasView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Categorias")),
-      body: StreamBuilder<List<Categoria>>(
-        stream: _controller.listarCategorias(),
-        builder: (context, snapshot) {
-          if (snapshot.connectionState == ConnectionState.waiting) {
-            return Center(child: CircularProgressIndicator());
-          }
-
-          if (snapshot.hasError) {
-            return Center(
-              child: Text(
-                "Erro: ${snapshot.error}",
-                style: TextStyle(color: Colors.red),
-              ),
-            );
-          }
-
-          final categorias = snapshot.data ?? [];
-          if (categorias.isEmpty) {
-            return Center(child: Text("Nenhuma categoria encontrada."));
-          }
-
-          return ListView.builder(
-            itemCount: categorias.length,
-            itemBuilder: (context, index) {
-              final categoria = categorias[index];
-              return ListTile(
-                title: Text(categoria.nome),
-                subtitle: Text(categoria.descricao),
-                leading: Image.network(categoria.imagem),
-                onTap: () {
-                  Navigator.pushNamed(context, 'cardapio',
-                      arguments: categoria.nome);
-                },
-              );
-            },
-          );
-        },
+      appBar: MyComponets().GeraAppBar(
+        'Selecione a Categoria',
+        'Ver seu pedido',
+        true,
+        context,
       ),
-    );
-  }
-}
-
-
-/* class CategoriasView extends StatefulWidget {
-  const CategoriasView({super.key});
-
-  @override
-  State<CategoriasView> createState() => _CategoriasViewState();
-}
-
-class _CategoriasViewState extends State<CategoriasView> {
-  //atributo
-  List<Categoria> lista = [];
-
-  @override
-  void initState() {
-    lista = Categoria.gerarCategoria();
-    super.initState();
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    //Nao consegui usar este codigo para puxar as categorias do banco de dados
-    /* return StreamBuilder(
-      stream: CategoriaController().listarItens('1'),
-      builder: (context, AsyncSnapshot<QuerySnapshot> snapshot) {
-
-        //Sai da funcao
-        if (snapshot.connectionState == ConnectionState.waiting) {
-          return CircularProgressIndicator();
-        }
-
-        //Sai da funcao
-        if (!snapshot.hasData || snapshot.data!.docs.isEmpty) {
-          return Text('Nenhum item encontrado.');
-        }
-
-        //Obteve sucesso
-        return ListView(
-          children: snapshot.data!.docs.map((doc) {
-            final item = doc.data() as Map<String, dynamic>;
-            return ListTile(
-              title: Text(item['nome']),
-              subtitle: Text(item['descricao']),
-              trailing: Text('R\$ ${item['preco'].toStringAsFixed(2)}'),
-              onTap: () {
-                // Lógica para abrir detalhes do item ou adicionar ao pedido
-              },
-            );
-          }).toList(),
-        );
-      },
-    ); */
-
-    return Scaffold(
-      appBar: MyComponets().GeraAppBar('Selecione a Categoria', 'Ver seu pedido', true, context),
       body: Container(
         decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(5),
-            gradient: LinearGradient(
-              colors: [
-                const Color.fromARGB(
-                    255, 255, 227, 212), // Começa com uma cor mais clara
-                const Color.fromARGB(
-                    255, 255, 198, 168), // Termina com uma cor mais escura
-              ],
-              begin: Alignment.topCenter,
-              end: Alignment.bottomCenter,
-            )),
-        child: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: GridView.builder(
-            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 2, // 2 itens por linha
-              crossAxisSpacing: 10,
-              mainAxisSpacing: 10,
-              childAspectRatio: 3 / 2,
-            ),
-            itemCount: lista.length,
-            itemBuilder: (context, index) {
-              return Card(
-                elevation: 4,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10),
-                ),
-                child: InkWell(
-                  onTap: () {
-                    // Retorna o item da lista selecionado
-                    var dados = lista[index].catNome;
-                    // Navegar para a tela DetalhesView
-                    Navigator.pushNamed(context, 'cardapio', arguments: dados);
-                  },
-                  child: Stack(
-                    children: [
-                      // Imagem ocupando o botão inteiro
-                      ClipRRect(
-                        borderRadius: BorderRadius.circular(10),
-                        child: Image.asset(
-                          lista[index].catImagem,
-                          width: double.infinity,
-                          height: double.infinity,
-                          fit: BoxFit.cover, // Para a imagem ocupar todo o espaço
-                        ),
-                      ),
-                      // Texto sobreposto na parte inferior
-                      Positioned(
-                        bottom: 0,
-                        left: 0,
-                        right: 0,
-                        child: Container(
-                          decoration: BoxDecoration(
-                            gradient: LinearGradient(
-                              colors: [
-                                const Color.fromARGB(10, 0, 0, 0),
-                                const Color.fromARGB(255, 0, 0, 0)
-                              ],
-                              begin: Alignment.topCenter,
-                              end: Alignment.bottomCenter,
-                            ),
-                          ),
-                          padding:
-                              EdgeInsets.symmetric(vertical: 8, horizontal: 10),
-                          child: Text(
-                            lista[index].catNome,
-                            style: TextStyle(
-                              fontSize: 20,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white,
-                            ),
-                            textAlign: TextAlign.center,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
+          borderRadius: BorderRadius.circular(5),
+          gradient: LinearGradient(
+            colors: [
+              const Color.fromARGB(255, 255, 227, 212), // Cor clara no topo
+              const Color.fromARGB(255, 255, 198, 168), // Cor escura na base
+            ],
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+          ),
+        ),
+        child: StreamBuilder<List<Categoria>>(
+          stream: _controller.listarCategorias(),
+          builder: (context, snapshot) {
+            if (snapshot.connectionState == ConnectionState.waiting) {
+              return Center(child: CircularProgressIndicator());
+            }
+
+            if (snapshot.hasError) {
+              return Center(
+                child: Text(
+                  "Erro: ${snapshot.error}",
+                  style: TextStyle(color: Colors.red),
                 ),
               );
-            },
-          ),
+            }
+
+            final categorias = snapshot.data ?? [];
+            if (categorias.isEmpty) {
+              return Center(child: Text("Nenhuma categoria encontrada."));
+            }
+
+            return Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: GridView.builder(
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2, // Número de itens por linha
+                  crossAxisSpacing: 10,
+                  mainAxisSpacing: 10,
+                  childAspectRatio: 3 / 2,
+                ),
+                itemCount: categorias.length,
+                itemBuilder: (context, index) {
+                  final categoria = categorias[index];
+                  return Card(
+                    elevation: 4,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: InkWell(
+                      onTap: () {
+                        // Navegar para a tela do cardápio com a categoria selecionada
+                        Navigator.pushNamed(
+                          context,
+                          'cardapio',
+                          arguments: categoria.nome,
+                        );
+                      },
+                      child: Stack(
+                        children: [
+                          // Imagem ocupando todo o card
+                          ClipRRect(
+                            borderRadius: BorderRadius.circular(10),
+                            child: Image.network(
+                              categoria.imagem,
+                              width: double.infinity,
+                              height: double.infinity,
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                          // Gradiente e texto sobreposto
+                          Positioned(
+                            bottom: 0,
+                            left: 0,
+                            right: 0,
+                            child: Container(
+                              decoration: BoxDecoration(
+                                gradient: LinearGradient(
+                                  colors: [
+                                    Colors.black.withOpacity(0.1),
+                                    Colors.black.withOpacity(0.7),
+                                  ],
+                                  begin: Alignment.topCenter,
+                                  end: Alignment.bottomCenter,
+                                ),
+                              ),
+                              padding: EdgeInsets.symmetric(
+                                vertical: 8,
+                                horizontal: 10,
+                              ),
+                              child: Text(
+                                categoria.nome,
+                                style: TextStyle(
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white,
+                                ),
+                                textAlign: TextAlign.center,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  );
+                },
+              ),
+            );
+          },
         ),
       ),
     );
   }
-} */
+}

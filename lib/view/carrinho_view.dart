@@ -14,64 +14,55 @@ class CarrinhoView extends StatefulWidget {
   State<CarrinhoView> createState() => _CarrinhoViewState();
 }
 
+
 class _CarrinhoViewState extends State<CarrinhoView> {
   List<Map<String, dynamic>> itens = Carrinho().itens;
 
   @override
   Widget build(BuildContext context) {
-    // Calcula a soma total dos itens
-    double total = itens.fold( 0, (soma, item) => soma + (item['valor'] * item['quantidade']));
+    double total = itens.fold(
+        0, (soma, item) => soma + (item['valor'] * item['quantidade']));
 
     if (itens.isEmpty) {
-      //Carrinho VAZIO
       return Scaffold(
         appBar: MyComponets().GeraAppBar('Seu Pedido', '', false, context),
         body: Container(
           decoration: BoxDecoration(
-              gradient: LinearGradient(
-            colors: [
-              const Color.fromARGB(
-                  255, 255, 227, 212), // Começa com uma cor mais clara
-              const Color.fromARGB(
-                  255, 255, 198, 168), // Termina com uma cor mais escura
-            ],
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-          )),
-          child: Column(
-            children: [
-              SizedBox(height: 300),
-              Center(
-                child: Text(
-                  'Seu carrinho está vazio.',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(fontSize: 20, color: Colors.grey.shade600),
-                ),
-              ),
-            ],
+            gradient: LinearGradient(
+              colors: [
+                const Color.fromARGB(255, 255, 227, 212),
+                const Color.fromARGB(255, 255, 198, 168),
+              ],
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+            ),
+          ),
+          child: Center(
+            child: Text(
+              'Seu carrinho está vazio.',
+              textAlign: TextAlign.center,
+              style: TextStyle(fontSize: 20, color: Colors.grey.shade600),
+            ),
           ),
         ),
       );
     } else {
-      //Carrinho COM ITEM
       return Scaffold(
         appBar: MyComponets().GeraAppBar('Seu Pedido', '', false, context),
         body: Container(
           decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(5),
-              gradient: LinearGradient(
-                colors: [
-                  const Color.fromARGB(
-                      255, 255, 227, 212), // Começa com uma cor mais clara
-                  const Color.fromARGB(
-                      255, 255, 198, 168), // Termina com uma cor mais escura
-                ],
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter,
-              )),
+            borderRadius: BorderRadius.circular(5),
+            gradient: LinearGradient(
+              colors: [
+                const Color.fromARGB(255, 255, 227, 212),
+                const Color.fromARGB(255, 255, 198, 168),
+              ],
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+            ),
+          ),
           child: Column(
             children: [
-              // Lista de produtos
               Expanded(
                 child: Padding(
                   padding: EdgeInsets.all(10),
@@ -101,19 +92,15 @@ class _CarrinhoViewState extends State<CarrinhoView> {
                             ),
                           ),
                           trailing: Row(
-                            mainAxisSize: MainAxisSize
-                                .min, // Importante para limitar o espaço
+                            mainAxisSize: MainAxisSize.min,
                             children: [
                               InkWell(
-                                //Remover quantidade
                                 onTap: () {
-                                  setState(
-                                    () {
-                                      if (itens[index]['quantidade'] > 1) {
-                                        itens[index]['quantidade'] -= 1;
-                                      }
-                                    },
-                                  );
+                                  setState(() {
+                                    if (itens[index]['quantidade'] > 1) {
+                                      itens[index]['quantidade'] -= 1;
+                                    }
+                                  });
                                 },
                                 child: Icon(
                                   Icons.remove_circle_outline,
@@ -121,9 +108,7 @@ class _CarrinhoViewState extends State<CarrinhoView> {
                                   color: Colors.red.shade900,
                                 ),
                               ),
-                              SizedBox(
-                                width: 3,
-                              ),
+                              SizedBox(width: 3),
                               Text(
                                 itens[index]['quantidade'].toString(),
                                 style: TextStyle(
@@ -131,17 +116,12 @@ class _CarrinhoViewState extends State<CarrinhoView> {
                                   fontSize: 20,
                                 ),
                               ),
-                              SizedBox(
-                                width: 3,
-                              ),
+                              SizedBox(width: 3),
                               InkWell(
-                                //Adicionar quantidade
                                 onTap: () {
-                                  setState(
-                                    () {
-                                      itens[index]['quantidade'] += 1;
-                                    },
-                                  );
+                                  setState(() {
+                                    itens[index]['quantidade'] += 1;
+                                  });
                                 },
                                 child: Icon(
                                   Icons.add_circle_outline,
@@ -149,17 +129,12 @@ class _CarrinhoViewState extends State<CarrinhoView> {
                                   color: Colors.green.shade900,
                                 ),
                               ),
-                              SizedBox(
-                                  width:
-                                      16), // Espaçamento entre o texto e o ícone
+                              SizedBox(width: 16),
                               InkWell(
-                                // Remover Item do carrinho
                                 onTap: () {
-                                  setState(
-                                    () {
-                                      itens.removeAt(index);
-                                    },
-                                  );
+                                  setState(() {
+                                    itens.removeAt(index);
+                                  });
                                 },
                                 child: Icon(
                                   Icons.cancel_outlined,
@@ -194,7 +169,13 @@ class _CarrinhoViewState extends State<CarrinhoView> {
                   ),
                   onPressed: () async {
                     try {
-                      await PedidoController().finalizarPedido(Carrinho().itens, LoginController().idUsuario());
+                      await PedidoController().finalizarPedido(
+                          Carrinho().itens, LoginController().idUsuario());
+
+                      setState(() {
+                        Carrinho().itens.clear();
+                      });
+
                       sucesso(context, "Pedido finalizado com sucesso!");
                     } catch (e) {
                       erro(context, e.toString());

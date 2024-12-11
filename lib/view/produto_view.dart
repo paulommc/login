@@ -10,7 +10,7 @@ import '../model/produtos.dart';
 class ProdutosPage extends StatelessWidget {
   final String categoriaId;
 
-  ProdutosPage({required this.categoriaId});
+  const ProdutosPage({super.key, required this.categoriaId});
 
   @override
   Widget build(BuildContext context) {

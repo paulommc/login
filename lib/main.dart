@@ -23,7 +23,7 @@ Future<void> main() async {
   FirebaseService().inicializarDados();
   runApp(
     DevicePreview(
-      enabled: true,
+      enabled: false,
       builder: (context) => MainApp(),
     ),
   );
