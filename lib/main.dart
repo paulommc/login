@@ -2,6 +2,7 @@
 
 //Firebase
 import 'package:firebase_core/firebase_core.dart';
+import 'package:login/controller/firebase_controller.dart';
 import 'package:login/firebase_options.dart';
 //Flutter
 import 'package:flutter/material.dart';
@@ -19,6 +20,7 @@ import 'package:login/view/recupera_senha_view.dart';
 Future<void> main() async {
   //inicializar o Fire Base
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform,);
+  FirebaseService().inicializarDados();
   runApp(
     DevicePreview(
       enabled: true,

@@ -1,9 +1,65 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, use_key_in_widget_constructors, library_private_types_in_public_api
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:login/view/components/my_componets.dart';
+import 'package:login/controller/categoria_controller.dart';
 import '../model/categoria.dart';
 
 class CategoriasView extends StatefulWidget {
+  @override
+  _CategoriasViewState createState() => _CategoriasViewState();
+}
+
+class _CategoriasViewState extends State<CategoriasView> {
+  final CategoriaController _controller = CategoriaController();
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text("Categorias")),
+      body: StreamBuilder<List<Categoria>>(
+        stream: _controller.listarCategorias(),
+        builder: (context, snapshot) {
+          if (snapshot.connectionState == ConnectionState.waiting) {
+            return Center(child: CircularProgressIndicator());
+          }
+
+          if (snapshot.hasError) {
+            return Center(
+              child: Text(
+                "Erro: ${snapshot.error}",
+                style: TextStyle(color: Colors.red),
+              ),
+            );
+          }
+
+          final categorias = snapshot.data ?? [];
+          if (categorias.isEmpty) {
+            return Center(child: Text("Nenhuma categoria encontrada."));
+          }
+
+          return ListView.builder(
+            itemCount: categorias.length,
+            itemBuilder: (context, index) {
+              final categoria = categorias[index];
+              return ListTile(
+                title: Text(categoria.nome),
+                subtitle: Text(categoria.descricao),
+                leading: Image.network(categoria.imagem),
+                onTap: () {
+                  Navigator.pushNamed(context, 'cardapio',
+                      arguments: categoria.nome);
+                },
+              );
+            },
+          );
+        },
+      ),
+    );
+  }
+}
+
+
+/* class CategoriasView extends StatefulWidget {
   const CategoriasView({super.key});
 
   @override
@@ -16,12 +72,44 @@ class _CategoriasViewState extends State<CategoriasView> {
 
   @override
   void initState() {
-    // lista = Categoria.gerarCategoria();
+    lista = Categoria.gerarCategoria();
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
+    //Nao consegui usar este codigo para puxar as categorias do banco de dados
+    /* return StreamBuilder(
+      stream: CategoriaController().listarItens('1'),
+      builder: (context, AsyncSnapshot<QuerySnapshot> snapshot) {
+
+        //Sai da funcao
+        if (snapshot.connectionState == ConnectionState.waiting) {
+          return CircularProgressIndicator();
+        }
+
+        //Sai da funcao
+        if (!snapshot.hasData || snapshot.data!.docs.isEmpty) {
+          return Text('Nenhum item encontrado.');
+        }
+
+        //Obteve sucesso
+        return ListView(
+          children: snapshot.data!.docs.map((doc) {
+            final item = doc.data() as Map<String, dynamic>;
+            return ListTile(
+              title: Text(item['nome']),
+              subtitle: Text(item['descricao']),
+              trailing: Text('R\$ ${item['preco'].toStringAsFixed(2)}'),
+              onTap: () {
+                // Lógica para abrir detalhes do item ou adicionar ao pedido
+              },
+            );
+          }).toList(),
+        );
+      },
+    ); */
+
     return Scaffold(
       appBar: MyComponets().GeraAppBar('Selecione a Categoria', 'Ver seu pedido', true, context),
       body: Container(
@@ -69,8 +157,7 @@ class _CategoriasViewState extends State<CategoriasView> {
                           lista[index].catImagem,
                           width: double.infinity,
                           height: double.infinity,
-                          fit: BoxFit
-                              .cover, // Para a imagem ocupar todo o espaço
+                          fit: BoxFit.cover, // Para a imagem ocupar todo o espaço
                         ),
                       ),
                       // Texto sobreposto na parte inferior
@@ -112,4 +199,4 @@ class _CategoriasViewState extends State<CategoriasView> {
       ),
     );
   }
-}
+} */

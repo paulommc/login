@@ -2,7 +2,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:login/controller/login_controller.dart';
-import 'package:login/view/components/mensagem.dart';
 import 'package:login/view/components/text_field.dart';
 
 class NovaContaView extends StatefulWidget {

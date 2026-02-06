@@ -24,27 +24,26 @@ class LoginController {
           'nome': nome,
         },
       );
-
+      
       sucesso(context, 'Usuário criado com sucesso!');
       Navigator.pop(context);
+
     }).catchError((error) {
-      // switch (e.code) {
-      //   case 'email-already-in-use':
-      //     erro(context, 'O email já foi cadastrado.');
-      //     break;
-      //   case 'invalid-email':
-      //     erro(context, 'O formato do email é inválido.');
-      //     break;
-      //   default:
-      erro(context, 'ERRO: ${error.toString()}');
-      // }
+      switch (error.code) {
+        case 'email-already-in-use':
+          erro(context, 'O email já foi cadastrado.');
+          break;
+        case 'invalid-email':
+          erro(context, 'O formato do email é inválido.');
+          break;
+        default:
+          erro(context, 'ERRO: ${error.toString()}');
+      }
     });
   }
 
   //
   // LOGIN
-  // Efetuar o login de um usuário previamente cadastrado
-  // no serviço Firebase Authentication
   //
   void login(context, email, senha) {
     auth
@@ -53,21 +52,18 @@ class LoginController {
       //sucesso(context, 'Usuário autenticado com sucesso!');
       Navigator.pushNamed(context, 'categorias');
     }).catchError((e) {
-      // switch (e.code) {
-      //   case 'invalid-email':
-      //     erro(context, 'O formato do email é inválido');
-      //     break;
-      //   default:
-      //     // erro(context, 'ERRO: ${e.code.toString()}');
-      // }
+      switch (e.code) {
+        case 'invalid-email':
+          erro(context, 'O formato do email é inválido');
+          break;
+        default:
+          erro(context, 'ERRO: ${e.code.toString()}');
+      }
     });
   }
-  // arrumar os MaterialApp e passar pro as coisas pro BD. Passar os sucesso e erro manualmente. Pq cada MaterialApp pega um contexto diferente.
 
   //
   // ESQUECEU A SENHA
-  // Envia uma mensagem de email para recuperação de senha para
-  // um conta de email válida
   //
   void esqueceuSenha(context, String email) {
     if (email.isNotEmpty) {
